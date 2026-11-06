@@ -1,0 +1,79 @@
+/* モバイル固定フッターボタンバー（yss-fbar）。〜1024px でのみ表示。 */
+.yss-fbar{ display: none; }
+
+@media (max-width: 1024px){
+  .yss-fbar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100vw;
+    z-index: 99990;
+    display: flex;
+    box-shadow: 0 -2px 12px rgba(0,0,0,.12);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    transition: transform .3s ease;
+  }
+  /* 下スクロールで隠す（footer-bar.js が .is-hidden を付け外し） */
+  .yss-fbar.is-hidden{ transform: translateY(100%); }
+  /* バー分の余白を確保（コンテンツが隠れないように） */
+  body.yss-has-fbar{ padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+  /* Cocoon のトップへ戻るボタンをバーの上に逃がす */
+  body.yss-has-fbar .go-to-top{ bottom: calc(68px + env(safe-area-inset-bottom, 0px)); }
+  /* Cocoon 標準の「フッターモバイルボタン」は併用しない。設定で切り忘れても
+     二重表示・スクロール挙動の食い違いが起きないよう、CSS でも無効化する。
+     （Cocoon 設定「モバイル → フッターモバイルボタンを表示」も OFF 推奨） */
+  body.yss-has-fbar .mobile-footer-menu-buttons{ display: none !important; }
+
+  .yss-fbar__btn{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    /* セーフエリア（iPhone のホームバー／Android のジェスチャーバー）分は
+       ボタン自身の下パディングで吸収する。バー側に padding を持たせると
+       背景が透明なため、セーフエリアが 0 でない端末で下に隙間が見える。 */
+    padding: 8px 4px calc(8px + env(safe-area-inset-bottom, 0px));
+    background: var(--fb-bg, #888);
+    color: var(--fb-fg, #fff);
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+  }
+  /* 字形ごとの高さ差を固定ボックスで吸収し、ラベル位置を揃える */
+  .yss-fbar__btn i,
+  .yss-fbar__btn .yss-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .yss-fbar__label{
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  /* ホバー／タップは色を変えず（Cocoon の赤いリンクホバーを打ち消す）少し薄く */
+  .yss-fbar__btn{ transition: opacity .15s ease; }
+  .yss-fbar__btn:hover,
+  .yss-fbar__btn:focus{ color: var(--fb-fg, #fff); opacity: .88; }
+  .yss-fbar__btn:active{ opacity: .8; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  /* アニメーションは止めるが、ヘッダーと同じく下スクロールでは隠す
+     （.is-hidden の translateY は効かせる）。 */
+  .yss-fbar{ transition: none; }
+}
+
+/* SVG アイコン（Font Awesome が無いテーマ用。yss_icon()） */
+.yss-icon{display:inline-block;width:1em;height:1em;vertical-align:-.125em;flex:0 0 auto}

@@ -1,0 +1,197 @@
+/* モバイルヘッダー（yss-mheader）とスライドインメニュー（yss-mnav）。〜1024px のみ。 */
+.yss-mheader{ display: none; }
+.yss-mnav{ display: none; }
+
+@media (max-width: 1024px){
+  .yss-mheader{
+    position: fixed;
+    top: var(--wp-admin--admin-bar--height, 0px);   /* ログイン中の管理バーを避ける */
+    left: 0;
+    right: 0;
+    z-index: 99980;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 56px;
+    padding: 6px 10px 6px 14px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    /* 別要素（FVスライダー等）のアニメーション中に固定ヘッダーがちらつく対策。
+       translateZ(0) で合成レイヤーに固定する。will-change は常時指定すると
+       逆にレイヤーが不安定になるため使わない。 */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    transition: transform .3s ease;
+    overflow: hidden;   /* 中身がはみ出しても横スクロールを生じさせない */
+    max-width: 100vw;
+  }
+  .yss-mheader.is-hidden{ transform: translate3d(0,-100%,0); }
+  .admin-bar .yss-mheader{ top: 46px; }
+
+  body.yss-has-mheader{ padding-top: 56px; }
+
+  .yss-mheader__logo{
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    min-width: 0;                 /* flex アイテムの縮小を許可 */
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--yoga-text, #5B4B45);
+    font-weight: 700;
+    line-height: 1.2;
+    transition: opacity .15s ease;
+  }
+  .yss-mheader__logo:hover{ color: var(--yoga-text, #5B4B45); opacity: .7; }
+  .yss-mheader__logo img{ max-height: 38px; width: auto; }
+  .yss-mheader__logo span{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .yss-mheader__actions{ display: flex; align-items: stretch; flex: 0 0 auto; gap: 7px; }
+  .yss-mheader__btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    min-width: 40px;                /* 幅はラベルなりに伸びる。最小 40px */
+    padding: 5px 3px;
+    border: 0;
+    background: transparent;
+    color: var(--mh-fg, var(--yoga-text, #5B4B45));
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* アイコンは字形ごとに高さが違うので、固定高のボックスに入れて中央寄せする。
+     こうすると下のラベルの位置が全ボタンで揃う。 */
+  .yss-mheader__btn i,
+  .yss-mheader__btn .yss-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    font-size: 21px;               /* アイコンを一回り大きく */
+    line-height: 1;
+  }
+  .yss-mheader__btn span{
+    display: block;
+    height: 12px;                  /* ラベルも高さを固定して行位置を揃える */
+    font-size: 10px;
+    line-height: 12px;
+    white-space: nowrap;           /* 省略せず全表示（ボタン幅が伸びる） */
+  }
+  /* ホバーは色を変えず（Cocoon の赤いリンクホバーを打ち消す）、少し薄く */
+  .yss-mheader__btn{ transition: opacity .15s ease; }
+  .yss-mheader__btn:hover,
+  .yss-mheader__btn:focus{ color: var(--mh-fg, var(--yoga-text, #5B4B45)); opacity: .6; }
+
+  /* スライドイン：DOM には常に置くが、閉じている間は visibility:hidden で
+     描画・合成させない（フルスクリーンの固定レイヤーが残ると他要素の
+     アニメーションでヘッダーがちらつく原因になる）。閉じるアニメーション中は
+     visibility の切り替えを .3s 遅らせてパネルが出きるまで見せる。
+     フッターバー（99990）より前面に出すため z-index は 100000。 */
+  .yss-mnav{
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    visibility: hidden;
+    pointer-events: none;
+    /* パネルは transform で画面外（左）に退避している。overflow:hidden が無いと
+       その負の x 座標がドキュメントの横スクロール幅を広げ、モバイルで
+       レイアウトビューポートが膨張 → position:fixed の .yss-mheader が
+       画面幅より広くなり、右側のアイコンが画面外に出て「消える」。 */
+    overflow: hidden;
+    max-width: 100vw;
+    transition: visibility 0s linear .3s;
+  }
+  .yss-mnav[hidden]{ display: none; }          /* JS 前は非表示 */
+  .yss-mnav.is-open{
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  .yss-mnav__overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .yss-mnav.is-open .yss-mnav__overlay{ opacity: 1; }
+
+  .yss-mnav__panel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(78%, 320px);
+    background: #fff;
+    padding: 18px 22px 40px;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform .3s ease;
+  }
+  .yss-mnav.is-open .yss-mnav__panel{ transform: translateX(0); }
+
+  .yss-mnav__close{
+    display: block;
+    margin: 0 0 10px auto;
+    padding: 6px 10px;
+    border: 0;
+    background: transparent;
+    color: var(--yoga-main, #A4C58F);
+    font-size: 18px;
+    letter-spacing: .08em;
+    cursor: pointer;
+  }
+
+  .yss-mnav .yss-mnav__list{ list-style: none; margin: 0; padding: 0; }
+  /* 区切り線はメインカラーの 80% の濃さ */
+  .yss-mnav .yss-mnav__list li{ border-bottom: 1px solid color-mix(in srgb, var(--yoga-main, #A4C58F) 80%, transparent); margin: 0; }
+  .yss-mnav .yss-mnav__list li:first-child{ border-top: 1px solid color-mix(in srgb, var(--yoga-main, #A4C58F) 80%, transparent); }
+  .yss-mnav .yss-mnav__list li > a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 4px;
+    color: var(--yoga-text, #5B4B45);
+    text-decoration: none;
+    font-size: 15px;
+    transition: opacity .15s ease;
+  }
+  /* ホバーは色そのまま少し薄く（Cocoon の赤いホバーを打ち消す） */
+  .yss-mnav .yss-mnav__list li > a:hover{ color: var(--yoga-text, #5B4B45); opacity: .55; }
+  .yss-mnav__close:hover{ opacity: .6; }
+  /* 文頭のマーク：デフォルトは ●（メインカラー）。カスタムは CSS/HTML で上書き。 */
+  .yss-mnav .yss-mnav__list li > a::before{
+    content: "\25CF";
+    flex: 0 0 auto;
+    color: var(--yoga-main, #A4C58F);
+    font-size: 10px;
+  }
+
+  body.yss-mnav-open{ overflow: hidden; }
+}
+
+@media (min-width: 783px) and (max-width: 1024px){
+  .admin-bar .yss-mheader{ top: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .yss-mheader,
+  .yss-mnav__overlay,
+  .yss-mnav__panel{ transition: none; }
+}
+
+/* SVG アイコン（Font Awesome が無いテーマ用。yss_icon()） */
+.yss-icon{display:inline-block;width:1em;height:1em;vertical-align:-.125em;flex:0 0 auto}
+
+@media (max-width:1024px){.yss-mheader__btn .yss-icon{width:24px;padding:1px 0}}

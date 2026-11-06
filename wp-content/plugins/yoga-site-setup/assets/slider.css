@@ -1,0 +1,88 @@
+.yss-fv{
+  position:relative;
+  height:var(--yss-height-pc);
+  margin:var(--yss-mt-pc) var(--yss-mr-pc) var(--yss-mb-pc) var(--yss-ml-pc);
+  overflow:hidden;
+  background:#eee;
+  /* スライド切り替え（opacity のアニメーション）の再レイアウト・再描画を
+     このボックス内に完全に閉じ込める。contain:paint はコンポジタに対しても
+     クリップを保証するので、切り替え中に一瞬だけ横スクロールバーが出る／
+     固定フッターが1フレーム消える現象を防ぐ。translateZ(0) は逆に
+     レイヤー昇格のタイミング差で overflow が漏れることがあるため使わない。 */
+  isolation:isolate;
+  contain:layout paint;
+}
+.yss-fv__viewport,.yss-fv__slide,.yss-fv picture,.yss-fv img{width:100%;height:100%}
+.yss-fv__slide{position:absolute;inset:0;pointer-events:none}
+.yss-fv__slide[data-url]:not([data-url=""]){cursor:pointer}
+.yss-fv img{display:block;object-fit:cover}
+
+/* フェード切り替え（既定）。visibility はトランジションさせない
+   （切り替えごとの可視性フリップが固定要素の再描画を誘発するため）。
+   will-change:opacity で各スライドを安定した合成レイヤーに載せ、フェードを
+   再ラスタライズ不要の軽い処理にする（＝固定フッターのレイヤーを巻き添えに
+   しない）。5秒ごとに実際に opacity が変わる用途なので常時指定でも妥当。 */
+.yss-fv--fade .yss-fv__slide{opacity:0;transition:opacity .6s ease;pointer-events:none;will-change:opacity}
+.yss-fv--fade .yss-fv__slide.is-active{opacity:1;pointer-events:auto}
+
+/* スライド切り替え（左→右）。--yss-i はスライド番号、--yss-active は表示中の番号。 */
+.yss-fv--slide .yss-fv__slide{
+  opacity:1;
+  transform:translateX(calc((var(--yss-i) - var(--yss-active, 0)) * 100%));
+  transition:transform .6s ease;
+}
+.yss-fv--slide .yss-fv__slide.is-active{pointer-events:auto}
+
+.yss-fv__overlay{position:absolute;inset:0;z-index:1;pointer-events:none}
+.yss-fv__content{position:absolute;z-index:2;top:50%;left:7%;right:7%;transform:translateY(-50%);color:var(--yss-text-color);font-family:var(--yss-text-font),serif}
+.yss-fv__content.is-center{text-align:center}
+.yss-fv__content.is-right{text-align:right}
+.yss-fv__title{font-size:var(--yss-text-pc);font-weight:600;line-height:1.25;text-shadow:0 2px 14px rgba(0,0,0,.25)}
+.yss-fv__subtitle{margin:14px 0 0!important;color:inherit!important;font:inherit!important;font-size:calc(var(--yss-text-pc)*.45)!important;line-height:1.7!important}
+.yss-fv__button{position:relative;z-index:4;display:inline-block;margin-top:24px;padding:var(--yss-button-py) var(--yss-button-px);border-radius:var(--yss-button-radius);background:var(--yss-button-bg);color:var(--yss-button-color)!important;font-size:var(--yss-button-pc);font-weight:600;line-height:1.2;text-decoration:none!important;transition:filter .2s,transform .2s}
+.yss-fv__button:hover{opacity:.85;transform:translateY(-2px)}
+
+.yss-fv__arrow{position:absolute;z-index:5;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:1.35em;height:1.35em;padding:0;border:0;background:transparent;color:var(--yss-arrow-color);font-size:var(--yss-arrow-size);line-height:1;cursor:pointer}
+.yss-fv__arrow--prev{left:20px}
+.yss-fv__arrow--next{right:20px}
+.yss-fv--circle .yss-fv__arrow{border:2px solid currentColor;border-radius:50%;font-size:calc(var(--yss-arrow-size)*.75)}
+.yss-fv--long .yss-fv__arrow{width:2em}
+
+.yss-fv__dots{position:absolute;z-index:5;left:50%;bottom:14px;display:flex;gap:8px;transform:translateX(-50%)}
+/* ドットは常に正円。表示中は色のみ変える。 */
+.yss-fv__dot{width:var(--yss-dot-size);height:var(--yss-dot-size);min-width:0;padding:0;border:0;border-radius:50%;background:var(--yss-dot-color);opacity:.6;cursor:pointer;transition:background .2s,opacity .2s}
+.yss-fv__dot.is-active{background:var(--yss-dot-active);opacity:1}
+
+/* ナビゲーションの位置：center（矢印は中央・ドットは下）／ bottom（矢印もドットも下）／ hidden */
+.yss-fv--nav-bottom .yss-fv__arrow{top:auto;bottom:12px;transform:none}
+.yss-fv--nav-bottom .yss-fv__arrow--prev{left:16%}
+.yss-fv--nav-bottom .yss-fv__arrow--next{right:16%}
+.yss-fv--nav-bottom .yss-fv__dots{bottom:16px}
+.yss-fv--nav-hidden .yss-fv__arrow,
+.yss-fv--nav-hidden .yss-fv__dots{display:none}
+
+/* 全幅：ブロックエディタの is-layout-constrained は子要素に
+   margin-left/right:auto !important を当ててコンテンツ幅で中央寄せするため、
+   こちらも !important でフルブリード計算（親が中央寄せである前提）を上書きする。 */
+.yss-fv.yss-fv--full{
+  width:100vw!important;
+  max-width:100vw!important;
+  margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;
+  left:auto;right:auto;
+}
+.yss-fv.yss-fv--ratio{height:auto;aspect-ratio:var(--yss-ratio-pc)}
+.yss-fv-empty{padding:40px;text-align:center;background:#f6f7f7;color:#555}
+
+@media(max-width:600px){
+  .yss-fv{height:var(--yss-height-sp);margin:var(--yss-mt-sp) var(--yss-mr-sp) var(--yss-mb-sp) var(--yss-ml-sp)}
+  .yss-fv.yss-fv--ratio{height:auto;aspect-ratio:var(--yss-ratio-sp)}
+  .yss-fv__content{left:8%;right:8%}
+  .yss-fv__title{font-size:var(--yss-text-sp)}
+  .yss-fv__subtitle{font-size:calc(var(--yss-text-sp)*.5)!important}
+  .yss-fv__button{font-size:var(--yss-button-sp)}
+  .yss-fv__arrow--prev{left:8px}
+  .yss-fv__arrow--next{right:8px}
+  .yss-fv__dots{bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){.yss-fv__slide,.yss-fv__button{transition:none}}

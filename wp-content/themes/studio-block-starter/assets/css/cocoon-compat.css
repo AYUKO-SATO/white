@@ -1,0 +1,103 @@
+/*
+ * Cocoon から移したサイト用の互換 CSS。
+ * Cocoon のブロック設定で付いたクラス（下の余白・文字サイズ・マーカー・色）を、本文を書き換えずに同じ見た目で表示する。
+ * キーカラーはサイトごとに --sbs-cocoon-key-color で変えられる（既定は Cocoon の既定色）。
+ */
+:root{--sbs-cocoon-key-color:#19448e;--cocoon-box-padding:1em 1.5em}
+/* 下の余白（Cocoon の「下の余白」） */
+.has-bottom-margin.is-style-bottom-margin-0em{margin-bottom:0em!important}
+.has-bottom-margin.is-style-bottom-margin-1em{margin-bottom:1em!important}
+.has-bottom-margin.is-style-bottom-margin-2em{margin-bottom:2em!important}
+.has-bottom-margin.is-style-bottom-margin-3em{margin-bottom:3em!important}
+.has-bottom-margin.is-style-bottom-margin-4em{margin-bottom:4em!important}
+.has-bottom-margin.is-style-bottom-margin-5em{margin-bottom:5em!important}
+.has-bottom-margin.is-style-bottom-margin-6em{margin-bottom:6em!important}
+.has-bottom-margin.is-style-bottom-margin-7em{margin-bottom:7em!important}
+.has-bottom-margin.is-style-bottom-margin-8em{margin-bottom:8em!important}
+.has-bottom-margin.is-style-bottom-margin-9em{margin-bottom:9em!important}
+.has-bottom-margin.is-style-bottom-margin-10em{margin-bottom:10em!important}
+.has-bottom-margin.is-style-bottom-margin-11em{margin-bottom:11em!important}
+.has-bottom-margin.is-style-bottom-margin-12em{margin-bottom:12em!important}
+.has-bottom-margin.is-style-bottom-margin-13em{margin-bottom:13em!important}
+.has-bottom-margin.is-style-bottom-margin-14em{margin-bottom:14em!important}
+.has-bottom-margin.is-style-bottom-margin-15em{margin-bottom:15em!important}
+.has-bottom-margin.is-style-bottom-margin-16em{margin-bottom:16em!important}
+.has-bottom-margin.is-style-bottom-margin-17em{margin-bottom:17em!important}
+.has-bottom-margin.is-style-bottom-margin-18em{margin-bottom:18em!important}
+.has-bottom-margin.is-style-bottom-margin-19em{margin-bottom:19em!important}
+.has-bottom-margin.is-style-bottom-margin-20em{margin-bottom:20em!important}
+/* 文字サイズ（fz-NNpx） */
+.fz-10px{font-size:10px}
+.fz-11px{font-size:11px}
+.fz-12px{font-size:12px}
+.fz-13px{font-size:13px}
+.fz-14px{font-size:14px}
+.fz-15px{font-size:15px}
+.fz-16px{font-size:16px}
+.fz-17px{font-size:17px}
+.fz-18px{font-size:18px}
+.fz-19px{font-size:19px}
+.fz-20px{font-size:20px}
+.fz-21px{font-size:21px}
+.fz-22px{font-size:22px}
+.fz-24px{font-size:24px}
+.fz-26px{font-size:26px}
+.fz-28px{font-size:28px}
+.fz-30px{font-size:30px}
+.fz-32px{font-size:32px}
+.fz-36px{font-size:36px}
+.fz-40px{font-size:40px}
+/* マーカー */
+.marker-under{background:linear-gradient(transparent 60%,#ff9 60%)}
+.marker-under-red{background:linear-gradient(transparent 60%,#ffd0d1 60%)}
+.marker-under-blue{background:linear-gradient(transparent 60%,#a8dafb 60%)}
+.marker{background:#ff9}
+/* ボックス */
+.has-box-style{padding:var(--cocoon-box-padding)}
+.is-style-light-background-box{background-color:#f8f9f8}
+/* 色（Cocoon のパレット） */
+.has-key-color-color{color:var(--sbs-cocoon-key-color)!important}.has-key-color-background-color{background-color:var(--sbs-cocoon-key-color)!important}.has-key-color-border-color{border-color:var(--sbs-cocoon-key-color)!important}
+.has-red-color{color:#e60033!important}.has-red-background-color{background-color:#e60033!important}.has-red-border-color{border-color:#e60033!important}
+.has-pink-color{color:#e95295!important}.has-pink-background-color{background-color:#e95295!important}.has-pink-border-color{border-color:#e95295!important}
+.has-purple-color{color:#884898!important}.has-purple-background-color{background-color:#884898!important}.has-purple-border-color{border-color:#884898!important}
+.has-deep-color{color:#55295b!important}.has-deep-background-color{background-color:#55295b!important}.has-deep-border-color{border-color:#55295b!important}
+.has-indigo-color{color:#1e50a2!important}.has-indigo-background-color{background-color:#1e50a2!important}.has-indigo-border-color{border-color:#1e50a2!important}
+.has-blue-color{color:#0095d9!important}.has-blue-background-color{background-color:#0095d9!important}.has-blue-border-color{border-color:#0095d9!important}
+.has-light-blue-color{color:#2ca9e1!important}.has-light-blue-background-color{background-color:#2ca9e1!important}.has-light-blue-border-color{border-color:#2ca9e1!important}
+.has-cyan-color{color:#00a3af!important}.has-cyan-background-color{background-color:#00a3af!important}.has-cyan-border-color{border-color:#00a3af!important}
+.has-teal-color{color:#007b43!important}.has-teal-background-color{background-color:#007b43!important}.has-teal-border-color{border-color:#007b43!important}
+.has-green-color{color:#3eb370!important}.has-green-background-color{background-color:#3eb370!important}.has-green-border-color{border-color:#3eb370!important}
+.has-light-green-color{color:#8bc34a!important}.has-light-green-background-color{background-color:#8bc34a!important}.has-light-green-border-color{border-color:#8bc34a!important}
+.has-lime-color{color:#c3d825!important}.has-lime-background-color{background-color:#c3d825!important}.has-lime-border-color{border-color:#c3d825!important}
+.has-yellow-color{color:#ffd900!important}.has-yellow-background-color{background-color:#ffd900!important}.has-yellow-border-color{border-color:#ffd900!important}
+.has-amber-color{color:#ffc107!important}.has-amber-background-color{background-color:#ffc107!important}.has-amber-border-color{border-color:#ffc107!important}
+.has-orange-color{color:#f39800!important}.has-orange-background-color{background-color:#f39800!important}.has-orange-border-color{border-color:#f39800!important}
+.has-deep-orange-color{color:#ea5506!important}.has-deep-orange-background-color{background-color:#ea5506!important}.has-deep-orange-border-color{border-color:#ea5506!important}
+.has-brown-color{color:#954e2a!important}.has-brown-background-color{background-color:#954e2a!important}.has-brown-border-color{border-color:#954e2a!important}
+.has-light-grey-color{color:#dddddd!important}.has-light-grey-background-color{background-color:#dddddd!important}.has-light-grey-border-color{border-color:#dddddd!important}
+.has-grey-color{color:#949495!important}.has-grey-background-color{background-color:#949495!important}.has-grey-border-color{border-color:#949495!important}
+.has-dark-grey-color{color:#666666!important}.has-dark-grey-background-color{background-color:#666666!important}.has-dark-grey-border-color{border-color:#666666!important}
+.has-cocoon-black-color{color:#333333!important}.has-cocoon-black-background-color{background-color:#333333!important}.has-cocoon-black-border-color{border-color:#333333!important}
+.has-cocoon-white-color{color:#ffffff!important}.has-cocoon-white-background-color{background-color:#ffffff!important}.has-cocoon-white-border-color{border-color:#ffffff!important}
+.has-watery-blue-color{color:#f3fafe!important}.has-watery-blue-background-color{background-color:#f3fafe!important}.has-watery-blue-border-color{border-color:#f3fafe!important}
+.has-watery-yellow-color{color:#fff7cc!important}.has-watery-yellow-background-color{background-color:#fff7cc!important}.has-watery-yellow-border-color{border-color:#fff7cc!important}
+.has-watery-red-color{color:#fdf2f2!important}.has-watery-red-background-color{background-color:#fdf2f2!important}.has-watery-red-border-color{border-color:#fdf2f2!important}
+.has-watery-green-color{color:#ebf8f4!important}.has-watery-green-background-color{background-color:#ebf8f4!important}.has-watery-green-border-color{border-color:#ebf8f4!important}
+.has-ex-a-color{color:#fef4f4!important}.has-ex-a-background-color{background-color:#fef4f4!important}.has-ex-a-border-color{border-color:#fef4f4!important}
+.has-ex-b-color{color:#f8f4e6!important}.has-ex-b-background-color{background-color:#f8f4e6!important}.has-ex-b-border-color{border-color:#f8f4e6!important}
+.has-ex-c-color{color:#eaf4fc!important}.has-ex-c-background-color{background-color:#eaf4fc!important}.has-ex-c-border-color{border-color:#eaf4fc!important}
+.has-ex-d-color{color:#eaedf7!important}.has-ex-d-background-color{background-color:#eaedf7!important}.has-ex-d-border-color{border-color:#eaedf7!important}
+.has-ex-e-color{color:#e8ecef!important}.has-ex-e-background-color{background-color:#e8ecef!important}.has-ex-e-border-color{border-color:#e8ecef!important}
+.has-ex-f-color{color:#f8fbf8!important}.has-ex-f-background-color{background-color:#f8fbf8!important}.has-ex-f-border-color{border-color:#f8fbf8!important}
+/* Cocoon と同じく、幅に余白・枠線を含める（背景色のある段落・見出しが本文の幅からはみ出さないように） */
+.entry-content *, .entry-content *::before, .entry-content *::after { box-sizing: border-box; }
+/* 背景色のある段落（Cocoon の余白） */
+.entry-content p.has-background { padding: .67em 1em; }
+/* リストのスタイル（Cocoon の「アイコンリスト」） */
+.entry-content ul[class*="is-style-icon-list-"] { list-style: none; padding: .5em .44em; margin-bottom: 1.6em; }
+.entry-content ul[class*="is-style-icon-list-"] > li { position: relative; padding-left: 1.6em; margin: .2em; }
+.entry-content ul[class*="is-style-icon-list-"] > li::before { content: ""; position: absolute; left: 0; }
+.entry-content ul.is-style-icon-list-check > li::before { top: .55em; width: .85em; height: .45em; border-left: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); color: #47585c; }
+.entry-content ul.is-style-icon-list-circle > li::before,
+.entry-content ul.is-style-icon-list-dot > li::before { top: .55em; width: .6em; height: .6em; border-radius: 50%; background: #47585c; }
+.entry-content ul.is-style-icon-list-triangle > li::before { top: .55em; border: .35em solid transparent; border-left: .55em solid #47585c; }

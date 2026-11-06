@@ -1,0 +1,90 @@
+/* Studio Block Starter — 基本の見た目（色・文字は theme.json）。サイト表示と編集画面の両方に効く。 */
+
+/* 画像・埋め込みは枠からはみ出さない */
+img, iframe, video { max-width: 100%; }
+.wp-site-blocks { overflow-x: clip; }
+
+/* ヘッダー */
+.sbs-header { position: sticky; top: 0; z-index: 50; background: var(--wp--preset--color--base); }
+.admin-bar .sbs-header { top: var(--wp-admin--admin-bar--height, 32px); }
+.sbs-header__inner { padding-block: 10px; }
+.sbs-header .wp-block-site-logo img { display: block; }
+.sbs-header .wp-block-navigation { font-size: 15px; letter-spacing: .12em; gap: 6px 28px; }
+.sbs-header .wp-block-navigation a:hover { opacity: .7; }
+
+/* フッター */
+.sbs-footer { padding-block: 28px; background: var(--wp--preset--color--base); font-size: 14px; }
+
+/* 本文：ブロック同士の縦の余白は 0 から（Cocoon から移したサイトの見た目に合わせる） */
+.entry-content > * { margin-block-start: 0; }
+.wp-block-post-content > * + * { margin-block-start: 0; }
+.wp-block-post-content p { margin-block: 0 1.8em; }
+
+/* 全幅のカバー */
+.wp-block-cover.alignfull { margin-block: 0; }
+
+/* 詳細（開閉）ブロック */
+.wp-block-details summary { cursor: pointer; }
+
+/* スクリーンリーダー用の文字（画面には出さない） */
+.sbs-sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- ブロックスタイル（functions.php で登録） ---------- */
+/* 詳細：Q&A（よくある質問） */
+:root { --sbs-faq-color: var(--wp--preset--color--main); --sbs-tab-color: var(--wp--preset--color--main); }
+.wp-block-details.is-style-sbs-faq { border: 2px solid var(--sbs-faq-color); border-radius: 12px; overflow: hidden; background: #fff; margin-bottom: 1em; }
+.wp-block-details.is-style-sbs-faq > summary { display: flex; gap: .6em; align-items: flex-start; padding: 10px 44px 10px 14px; background: var(--sbs-faq-color); color: #fff; font-weight: 700; letter-spacing: .08em; list-style: none; position: relative; line-height: 1.6; }
+.wp-block-details.is-style-sbs-faq > summary::-webkit-details-marker { display: none; }
+.wp-block-details.is-style-sbs-faq > summary::before { content: "Q"; flex: 0 0 auto; font-weight: 700; }
+.wp-block-details.is-style-sbs-faq > summary::after { content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-weight: 400; font-size: 1.2em; opacity: .8; }
+.wp-block-details.is-style-sbs-faq[open] > summary::after { content: "−"; }
+.wp-block-details.is-style-sbs-faq > :not(summary) { margin: 0; padding: 14px 16px 14px 2.4em; position: relative; }
+.wp-block-details.is-style-sbs-faq > summary + * { padding-top: 16px; }
+.wp-block-details.is-style-sbs-faq > summary + *::before { content: "A"; position: absolute; left: 16px; top: 16px; color: var(--sbs-faq-color); font-weight: 700; line-height: 1.6; font-size: 18px; }
+/* 詳細：開閉ボタン（View more など） */
+.wp-block-details.is-style-sbs-toggle > summary { display: block; text-align: center; padding: 8px 16px; border-radius: 999px; background: var(--sbs-faq-color); color: #fff; list-style: none; letter-spacing: .08em; }
+.wp-block-details.is-style-sbs-toggle > summary::-webkit-details-marker { display: none; }
+.wp-block-details.is-style-sbs-toggle > summary::before { content: "+"; margin-right: .5em; }
+.wp-block-details.is-style-sbs-toggle[open] > summary::before { content: "−"; }
+.wp-block-details.is-style-sbs-toggle > :not(summary) { margin-top: 1em; }
+
+/* 見出し付きボックス（こんな方におすすめ など） */
+.sbs-tab-box { margin-bottom: 1em; }
+.sbs-tab-box > .sbs-tab-box__label { display: inline-block; margin: 0 !important; padding: 2px 14px; border-radius: 10px 10px 0 0; background: var(--sbs-tab-color); color: #fff; font-size: 14px; font-weight: 700; letter-spacing: .08em; }
+.sbs-tab-box > .sbs-tab-box__content { border: 2px solid var(--sbs-tab-color); border-radius: 0 12px 12px 12px; padding: .4em .8em; background: #fff; margin-top: 0 !important; }
+.sbs-tab-box > .sbs-tab-box__label { padding: 0 .8em; font-size: .9em; line-height: 1.8; }
+.sbs-tab-box--ok > .sbs-tab-box__label::before { content: ""; display: inline-block; width: .8em; height: .8em; margin-right: .35em; border: 2px solid currentColor; border-radius: 50%; vertical-align: -.05em; }
+.sbs-tab-box > .sbs-tab-box__content > :last-child { margin-bottom: 0; }
+
+/* ボタンの大きさ（Cocoon の btn-s / btn-m / btn-l から移したもの） */
+.wp-block-button.sbs-btn-s .wp-block-button__link { padding: 8px 20px; font-size: 15px; }
+.wp-block-button.sbs-btn-m .wp-block-button__link { padding: 13px 28px; }
+.wp-block-button.sbs-btn-l .wp-block-button__link { padding: 18px 36px; font-size: 18px; }
+.wp-block-button__link.has-border-color { border-width: 1px; border-style: solid; }
+
+/* かんたんサイト設定のスマホヘッダーを使うときは、テーマのヘッダーをスマホ・タブレットで出さない */
+@media (max-width: 1024px) {
+  body.yss-has-mheader .sbs-header { display: none; }
+}
+
+/* フッターの法定ページのリンク */
+.sbs-footer__legal a { color: inherit; text-decoration: none; }
+.sbs-footer__legal a:hover { text-decoration: underline; }
+.sbs-footer p { margin: 0; }
+/* フッター：1行目にロゴ（左）と法定ページのリンク（右）、その下に著作権表示（PC は右、スマホは中央） */
+.sbs-footer .sbs-copyright { text-align: right; margin-top: 4px; }
+@media (max-width: 781px) {
+  .sbs-footer__row { align-items: center !important; gap: 14px; }
+  .sbs-footer .wp-block-site-logo img { height: 56px !important; width: auto !important; }
+  .sbs-footer__legal { text-align: right; }
+  .sbs-footer__legal .sbs-legal-links { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .sbs-footer__legal .sbs-legal-links > span[aria-hidden] { display: none; }
+  .sbs-footer .sbs-copyright { text-align: center; margin-top: 14px; font-size: 12px !important; }
+}
+
+
+/* ボタンのホバー：なめらかに少し浮く */
+.wp-block-button__link { transition: transform .45s cubic-bezier(.22,.8,.3,1), box-shadow .45s cubic-bezier(.22,.8,.3,1), background-color .3s ease, color .3s ease; }
+.wp-block-button__link:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
+.wp-block-button__link:active { transform: translateY(-1px); transition-duration: .15s; }
+@media (prefers-reduced-motion: reduce) { .wp-block-button__link { transition: none; } .wp-block-button__link:hover { transform: none; } }

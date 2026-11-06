@@ -1,0 +1,20 @@
+/* 汎用カルーセル（yss-carousel）。要素構造は carousel.js が生成する。 */
+.yss-carousel__viewport{position:relative;width:100%}
+/* トラックのはみ出しをここで切り抜く（矢印・ドットは viewport 直下なので影響なし）。
+   これが無いとページに横スクロールが生まれ、固定ヘッダー／フッターがずれる。 */
+.yss-carousel__clip{overflow:hidden}
+.yss-carousel__viewport .yss-carousel__track{display:flex;gap:var(--yss-carousel-gap,20px);overflow:visible;margin:0;padding:0;list-style:none;transform:translate3d(0,0,0);transition:transform .4s ease;will-change:transform}
+/* 1枚の幅は carousel.js が viewport に入れる --yss-per-view（PC/スマホの表示件数）で決まる。
+   以前は3等分に固定で、スケジュール（PC 2枚）や data-per-view と食い違っていた。 */
+.yss-carousel__item{--yss-pv:var(--yss-per-view,3);flex:0 0 calc((100% - var(--yss-carousel-gap,20px) * (var(--yss-pv) - 1)) / var(--yss-pv));max-width:calc((100% - var(--yss-carousel-gap,20px) * (var(--yss-pv) - 1)) / var(--yss-pv));margin:0}
+.yss-carousel__viewport.is-static .yss-carousel__track{justify-content:center;transform:none!important}
+.yss-carousel__viewport.is-static .yss-carousel__arrow,
+.yss-carousel__viewport.is-static .yss-carousel__dots{display:none}
+.yss-carousel__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid rgba(0,0,0,.1);border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 8px 18px rgba(0,0,0,.1);font-size:20px;line-height:1;cursor:pointer}
+.yss-carousel__arrow.is-prev{left:-10px}
+.yss-carousel__arrow.is-next{right:-10px}
+.yss-carousel__arrow:disabled{opacity:.35;cursor:default;pointer-events:none}
+.yss-carousel__dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.yss-carousel__dot{width:8px;height:8px;min-width:0;padding:0;border:0;border-radius:999px;background:currentColor;opacity:.3;cursor:pointer;transition:opacity .2s,width .2s}
+.yss-carousel__dot.is-active{width:22px;opacity:.7}
+@media(prefers-reduced-motion:reduce){.yss-carousel__viewport .yss-carousel__track{transition:none}}
