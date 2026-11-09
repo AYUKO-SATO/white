@@ -146,3 +146,16 @@ body.sbs-legal-page .wp-block-post-title { margin-bottom: 2.5rem !important; }
   body.sbs-legal-page .entry-content::after { height: 2rem; }
   body.sbs-legal-page .wp-block-post-title { margin-bottom: 1.75rem !important; }
 }
+
+/* ヘッダー右端の予約ボタン（PC のみ） */
+.sbs-header-cta { flex: none; margin-left: 8px; }
+.sbs-header-cta p { margin: 0; }
+.sbs-header-cta__btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 26px;
+  border-radius: 999px; color: #fff !important; font-weight: 700; font-size: 15px; letter-spacing: .1em; text-decoration: none !important; white-space: nowrap;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--wp--preset--color--main, #6EC38C) 80%, #fff), var(--wp--preset--color--main, #6EC38C));
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--wp--preset--color--main, #6EC38C) 35%, transparent);
+  transition: transform .45s cubic-bezier(.22, .8, .3, 1), box-shadow .45s cubic-bezier(.22, .8, .3, 1);
+}
+.sbs-header-cta__btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px color-mix(in srgb, var(--wp--preset--color--main, #6EC38C) 40%, transparent); }
+@media (max-width: 1024px) { .sbs-header-cta { display: none; } }
