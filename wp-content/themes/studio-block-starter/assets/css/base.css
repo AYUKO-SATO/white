@@ -159,3 +159,6 @@ body.sbs-legal-page .wp-block-post-title { margin-bottom: 2.5rem !important; }
 }
 .sbs-header-cta__btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px color-mix(in srgb, var(--wp--preset--color--main, #6EC38C) 40%, transparent); }
 @media (max-width: 1024px) { .sbs-header-cta { display: none; } }
+
+/* プルダウン：親メニューの左端にそろえて開く（右寄せナビでも左に広がらない） */
+.sbs-header .wp-block-navigation .has-child > .wp-block-navigation__submenu-container { left: 0 !important; right: auto !important; }
