@@ -88,3 +88,10 @@ img, iframe, video { max-width: 100%; }
 .wp-block-button__link:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
 .wp-block-button__link:active { transform: translateY(-1px); transition-duration: .15s; }
 @media (prefers-reduced-motion: reduce) { .wp-block-button__link { transition: none; } .wp-block-button__link:hover { transform: none; } }
+
+/* 法定ページ：見出し左寄せ・表は自動レイアウト（項目名が潰れないように） */
+.entry-content .yss-legal-table table { table-layout: auto !important; width: 100%; }
+.entry-content .yss-legal-table th[scope="row"] { width: 11em; white-space: nowrap; }
+@media (max-width: 600px) {
+  .entry-content .yss-legal-table th[scope="row"] { width: 100%; white-space: normal; }
+}
