@@ -95,3 +95,28 @@ img, iframe, video { max-width: 100%; }
 @media (max-width: 600px) {
   .entry-content .yss-legal-table th[scope="row"] { width: 100%; white-space: normal; }
 }
+
+/* 法定ページの見出し（第1条など）：左寄せ＋左の縦ライン */
+body.sbs-legal-page .entry-content h2.wp-block-heading {
+  text-align: left;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-top: 2.5em;
+  margin-bottom: .8em;
+  padding: .1em 0 .1em .8em;
+  border-left: 4px solid var(--wp--preset--color--main, #6EC38C);
+  border-bottom: 0;
+  background: none;
+}
+body.sbs-legal-page .entry-content h2.wp-block-heading::before,
+body.sbs-legal-page .entry-content h2.wp-block-heading::after { content: none; display: none; }
+@media (max-width: 600px) {
+  body.sbs-legal-page .entry-content h2.wp-block-heading { font-size: 1.125rem; }
+}
+/* 法定ページ：最後の行（制定日など）の下に余白・タイトル下の余白 */
+body.sbs-legal-page .entry-content::after { content: ""; display: block; height: 3rem; }
+body.sbs-legal-page .wp-block-post-title { margin-bottom: 2.5rem !important; }
+@media (max-width: 600px) {
+  body.sbs-legal-page .entry-content::after { height: 2rem; }
+  body.sbs-legal-page .wp-block-post-title { margin-bottom: 1.75rem !important; }
+}
