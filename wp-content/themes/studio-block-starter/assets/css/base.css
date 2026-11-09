@@ -10,7 +10,33 @@ img, iframe, video { max-width: 100%; }
 .sbs-header__inner { padding-block: 10px; }
 .sbs-header .wp-block-site-logo img { display: block; }
 .sbs-header .wp-block-navigation { font-size: 15px; letter-spacing: .12em; gap: 6px 28px; }
-.sbs-header .wp-block-navigation a:hover { opacity: .7; }
+/* メニュー：文字から少し離れた太めの下線が、中央から伸びる */
+.sbs-header .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content { position: relative; text-decoration: none !important; }
+.sbs-header .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -9px; height: 2px; border-radius: 2px;
+  background: currentColor; transform: scaleX(0); transform-origin: center;
+  transition: transform .4s cubic-bezier(.22, 1, .36, 1);
+}
+.sbs-header .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:hover::after,
+.sbs-header .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:focus-visible::after { transform: scaleX(1); }
+.sbs-header .wp-block-navigation a:hover { text-decoration: none !important; }
+.sbs-header .wp-block-navigation__submenu-container a:hover { opacity: .7; }
+
+/* プルダウン：ふわっと下りてくる */
+.sbs-header .wp-block-navigation .has-child > .wp-block-navigation__submenu-container {
+  transform: translateY(-10px);
+  transition: opacity .45s ease, transform .5s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .45s;
+}
+.sbs-header .wp-block-navigation .has-child:not(.open-on-click):hover > .wp-block-navigation__submenu-container,
+.sbs-header .wp-block-navigation .has-child:not(.open-on-click):not(.open-on-hover-click):focus-within > .wp-block-navigation__submenu-container,
+.sbs-header .wp-block-navigation .has-child .wp-block-navigation-submenu__toggle[aria-expanded="true"] ~ .wp-block-navigation__submenu-container {
+  transform: none;
+  transition: opacity .45s ease, transform .5s cubic-bezier(.22, 1, .36, 1), visibility 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sbs-header .wp-block-navigation .has-child > .wp-block-navigation__submenu-container,
+  .sbs-header .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content::after { transition: none; }
+}
 
 /* フッター */
 .sbs-footer { padding-block: 28px; background: var(--wp--preset--color--base); font-size: 14px; }
