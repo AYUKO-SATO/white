@@ -1,3 +1,8 @@
+/* サムネイルはページの読み込み後に読む（ファーストビューの画像を先に表示するため） */
+(function () {
+  function load() { document.querySelectorAll('.yss-nr img[data-src], .note-card img[data-src]').forEach(function (img) { img.src = img.dataset.src; img.removeAttribute('data-src'); }); }
+  if (document.readyState === 'complete') load(); else window.addEventListener('load', load);
+})();
 /**
  * note RSS カード列を軽量カルーセルへ変換する。
  * 以前は子テーマの wp_footer インラインスクリプトにあったものを移設。
