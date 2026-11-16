@@ -413,3 +413,8 @@
 .white-renewal .yss-mheader button.yss-mheader__toggle .yss-icon,.white-renewal .yss-mheader button.yss-mheader__toggle i{width:30px!important;height:30px!important}
 .white-renewal .yss-mheader .yss-mheader__btn[href*="lin.ee"],.white-renewal .yss-mheader .yss-mheader__btn[href*="line.me"]{color:#06C755!important}
 .white-renewal .yss-mheader .yss-mheader__btn[href*="lin.ee"] .yss-icon,.white-renewal .yss-mheader .yss-mheader__btn[href*="line.me"] .yss-icon{color:#06C755!important;fill:#06C755}
+/* スマホのヘッダー：アイコンと文字のバランス（アイコンを大きめ・文字は細め） */
+.white-renewal .yss-mheader .yss-mheader__btn,.white-renewal .yss-mheader button.yss-mheader__toggle{width:58px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;padding:6px 0 5px!important;color:#555!important}
+.white-renewal .yss-mheader .yss-mheader__btn .yss-icon,.white-renewal .yss-mheader .yss-mheader__btn i,.white-renewal .yss-mheader button.yss-mheader__toggle .yss-icon{width:32px!important;height:32px!important;font-size:30px!important;padding:0!important;margin:0!important}
+.white-renewal .yss-mheader .yss-mheader__btn[href*="lin.ee"] .yss-icon,.white-renewal .yss-mheader .yss-mheader__btn[href*="line.me"] .yss-icon{width:34px!important;height:34px!important;margin:-1px 0!important}
+.white-renewal .yss-mheader .yss-mheader__btn span,.white-renewal .yss-mheader button.yss-mheader__toggle span{font-weight:400!important;letter-spacing:0!important;padding:0!important;height:auto!important;line-height:1.2!important}
