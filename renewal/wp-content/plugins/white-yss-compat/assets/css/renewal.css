@@ -388,3 +388,28 @@
   body.white-renewal .wr-mini-cta .wp-block-buttons.white-cta-buttons{max-width:340px}
 }
 .white-renewal .yss-fbar .yss-fbar__label{font-size:14px!important;line-height:1.4!important;white-space:nowrap}
+
+/* 2026-11-16 調整2 */
+/* 見出しまわりの間隔（.wr-inner>* の margin:0 より強く） */
+.white-renewal .wr-inner>p.wr-en{margin-bottom:-22px!important}
+.white-renewal .wr-inner>.wr-profile__name{margin-top:-18px!important}
+.white-renewal .wr-inner>.wr-profile__en{margin-top:-26px!important}
+.white-renewal .wr-inner>.wr-profile__role+.wr-profile__name{margin-top:-20px!important}
+@media (min-width:900px){
+  .white-renewal .wr-inner>p.wr-en{margin-bottom:-30px!important}
+  .white-renewal .wr-profile .wr-inner>.wr-profile__name{margin-top:-8px!important}
+  .white-renewal .wr-profile .wr-inner>.wr-profile__en{margin-top:-14px!important}
+}
+/* note カード：高さは中身に合わせる（下の空白をなくす） */
+.white-renewal .wr-news .note-card-grid{align-items:flex-start!important}
+.white-renewal .wr-news .note-card{height:auto!important;min-height:0!important}
+.white-renewal .wr-news .note-card-body{padding:10px 12px 14px!important;gap:4px}
+/* 申し込みの帯：下の余白を上とそろえる */
+.white-renewal .wr-cta-band .white-cta-card{margin:0!important}
+.white-renewal .wr-cta-band .wp-block-block,.white-renewal .wr-cta-band>*{margin-block:0!important}
+/* スマホのヘッダー：ラベルの文字をそろえる、LINE は緑 */
+.white-renewal .yss-mheader .yss-mheader__btn span,.white-renewal .yss-mheader button.yss-mheader__toggle span{font-family:"Zen Kaku Gothic New",sans-serif!important;font-size:14px!important;font-weight:500!important;letter-spacing:.02em!important;color:#555!important;height:18px!important;line-height:18px!important}
+.white-renewal .yss-mheader button.yss-mheader__toggle{width:60px!important}
+.white-renewal .yss-mheader button.yss-mheader__toggle .yss-icon,.white-renewal .yss-mheader button.yss-mheader__toggle i{width:30px!important;height:30px!important}
+.white-renewal .yss-mheader .yss-mheader__btn[href*="lin.ee"],.white-renewal .yss-mheader .yss-mheader__btn[href*="line.me"]{color:#06C755!important}
+.white-renewal .yss-mheader .yss-mheader__btn[href*="lin.ee"] .yss-icon,.white-renewal .yss-mheader .yss-mheader__btn[href*="line.me"] .yss-icon{color:#06C755!important;fill:#06C755}
