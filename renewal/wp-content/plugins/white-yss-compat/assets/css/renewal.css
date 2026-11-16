@@ -418,3 +418,7 @@
 .white-renewal .yss-mheader .yss-mheader__btn .yss-icon,.white-renewal .yss-mheader .yss-mheader__btn i,.white-renewal .yss-mheader button.yss-mheader__toggle .yss-icon{width:32px!important;height:32px!important;font-size:30px!important;padding:0!important;margin:0!important}
 .white-renewal .yss-mheader .yss-mheader__btn[href*="lin.ee"] .yss-icon,.white-renewal .yss-mheader .yss-mheader__btn[href*="line.me"] .yss-icon{width:34px!important;height:34px!important;margin:-1px 0!important}
 .white-renewal .yss-mheader .yss-mheader__btn span,.white-renewal .yss-mheader button.yss-mheader__toggle span{font-weight:400!important;letter-spacing:0!important;padding:0!important;height:auto!important;line-height:1.2!important}
+/* FAQ のカテゴリ：選択中は緑地に白文字 */
+.white-renewal .wr-faq-nav p.is-current a,.white-renewal .wr-faq-nav p.is-current a:visited,.white-renewal .wr-faq-nav p.is-current a:hover{background:var(--wr-green)!important;border-color:var(--wr-green)!important;color:#fff!important}
+.white-renewal .wr-faq-nav a{color:var(--wr-dark)!important;transition:background .2s,color .2s}
+.white-renewal h2.wr-faq-cat__title{text-align:left!important;justify-content:flex-start!important}
