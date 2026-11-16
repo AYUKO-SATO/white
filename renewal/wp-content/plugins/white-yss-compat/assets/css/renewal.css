@@ -1,0 +1,380 @@
+/* 2026-11 リニューアル（Figma「White｜サイトリニューアル デザイン」）。body.white-renewal のときだけ読み込む。
+   スマホ基準、900px 以上で PC。最小の文字サイズは 14px。 */
+.white-renewal{
+  --wr-bg:#FBFAF7;--wr-text:#5E5E5E;--wr-dark:#444;--wr-green:#6EC38C;--wr-green-d:#4F9E70;--wr-green-l:#EEF6F0;
+  --wr-beige:#BBA492;--wr-beige-l:#F5F0EA;--wr-line:#E6E0D6;--wr-brown:#8B6A55;--wr-white:#fff;
+  --wr-pend-bg:#EEE;--wr-pend-text:#999;--wr-pend-line:#CCC;
+  --wr-en:"Cormorant Infant","Cormorant",serif;
+  --wr-gap:20px;--wr-max:1080px;
+  background:var(--wr-bg);color:var(--wr-text);
+}
+.white-renewal .entry-content{text-wrap:pretty}
+.white-renewal .sbs-main,.white-renewal .sbs-main>.entry-content{padding-left:0!important;padding-right:0!important;max-width:none!important;margin-left:0!important;margin-right:0!important;width:100%}
+.white-renewal .wr-sec :is(h1,h2,h3,p,li):not(.wr-en):not(.wr-hero__en):not(.wr-insta__title),.white-renewal .wr-hero :is(h1),.white-renewal .wr-footer{font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif!important}
+.white-renewal .wr-hero__text>*,.white-renewal .wr-info__cell>*{margin:0!important}
+.white-renewal .wr-mini-cta .wp-block-button{width:100%}
+
+/* ---------- セクションの土台：全幅の背景＋中の幅 ---------- */
+.white-renewal .entry-content>.wr-sec,.white-renewal .entry-content>.wr-hero,.white-renewal .entry-content>.wr-cta-band,.white-renewal .entry-content>.yss-fv,.white-renewal .entry-content>.wp-block-shortcode{max-width:none!important;width:100%;margin-left:0!important;margin-right:0!important}
+.white-renewal .entry-content>*{margin-block-start:0;margin-block-end:0}
+.white-renewal .wr-sec{padding:43px var(--wr-gap) 64px;box-sizing:border-box}
+.white-renewal .wr-sec.is-white{background:var(--wr-white)}
+.white-renewal .wr-sec.is-beige{background:var(--wr-beige-l)}
+.white-renewal .wr-sec.is-green{background:var(--wr-green-l)}
+.white-renewal .wr-inner{max-width:var(--wr-max);margin:0 auto;display:flex;flex-direction:column;gap:28px}
+.white-renewal .wr-inner>*{margin:0!important;max-width:100%}
+
+/* 見出しまわりのリセット（旧デザインの h2/h3 の装飾を打ち消す） */
+.white-renewal .wr-sec :is(h1,h2,h3),.white-renewal .wr-hero :is(h1,h2,h3){background:none!important;border:0!important;padding:0!important;margin:0!important;display:block!important;box-shadow:none!important;font-family:inherit;letter-spacing:.04em}
+.white-renewal .wr-sec :is(h1,h2,h3)::before,.white-renewal .wr-sec :is(h1,h2,h3)::after,.white-renewal .wr-hero :is(h1,h2,h3)::before,.white-renewal .wr-hero :is(h1,h2,h3)::after{content:none!important}
+.white-renewal .wr-sec p{margin:0;font-size:15px;line-height:1.85;letter-spacing:.04em;color:var(--wr-text)}
+
+/* セクション見出し：英字＋日本語 */
+.white-renewal .wr-en{font-family:var(--wr-en)!important;font-weight:500;font-size:40px!important;line-height:1.2!important;letter-spacing:.02em!important;color:var(--wr-green)!important;text-align:center;margin-bottom:-24px!important}
+.white-renewal h2.wr-title{font-size:14px!important;font-weight:700!important;letter-spacing:.12em!important;color:var(--wr-dark)!important;text-align:center!important;line-height:1.6!important}
+.white-renewal .wr-lead{text-align:center;font-size:15px!important}
+/* 下層ページの見出し：短い緑の線 */
+.white-renewal .wr-sec .is-layout-flow>*,.white-renewal .wr-hero .is-layout-flow>*{margin-block-start:0!important;margin-block-end:0!important}
+.white-renewal h2.wr-h2{text-align:left!important;font-size:20px!important;font-weight:700!important;color:var(--wr-dark)!important;letter-spacing:.06em!important;line-height:1.5!important;padding-bottom:12px!important;position:relative}
+.white-renewal h2.wr-h2::after{content:""!important;position:absolute;left:0;bottom:0;width:32px!important;height:2px!important;background:var(--wr-green)!important;border:0!important;transform:none!important;top:auto!important}
+.white-renewal .wr-note{font-size:14px!important;line-height:1.8!important}
+
+/* ---------- ボタン ---------- */
+.white-renewal .wr-more{justify-content:center;margin:0}
+.white-renewal .wr-more.is-left{justify-content:flex-start}
+.white-renewal .wr-btn-more .wp-block-button__link{background:#fff!important;color:var(--wr-brown)!important;border:1px solid var(--wr-beige)!important;border-radius:999px!important;padding:12px 28px!important;font-size:15px!important;font-weight:500;letter-spacing:.06em;min-height:48px;box-sizing:border-box;display:inline-flex;align-items:center;gap:8px;box-shadow:none!important}
+.white-renewal .wr-btn-more .wp-block-button__link::after,.white-renewal .wr-link a::after,.white-renewal .wr-other__title a::after{content:"";width:14px;height:14px;background:currentColor;-webkit-mask:var(--wr-arrow) center/contain no-repeat;mask:var(--wr-arrow) center/contain no-repeat;flex:none}
+.white-renewal{--wr-arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.white-renewal .wr-btn-map .wp-block-button__link{background:#fff!important;color:var(--wr-green-d)!important;border:1px solid var(--wr-green)!important;border-radius:999px!important;padding:12px 24px!important;font-size:15px!important;font-weight:700}
+.white-renewal .wr-btn-line-solid .wp-block-button__link{background:#06C755!important;color:#fff!important;border-radius:999px!important;padding:16px 48px!important;font-weight:700;font-size:16px!important;min-width:280px}
+
+/* ---------- 申し込み（再利用ブロック「CTA」） ---------- */
+.white-renewal .wr-cta{text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;background:none!important;box-shadow:none!important;border:0!important;padding:0!important}
+.white-renewal .wr-cta__lead{font-size:17px!important;font-weight:700;color:var(--wr-dark)!important;letter-spacing:.08em!important;margin:0!important}
+.white-renewal .wr-cta__sub{font-size:14px!important;line-height:1.7!important;margin:0 0 14px!important}
+.white-renewal .wr-cta .white-cta-buttons{width:100%;max-width:335px;margin:0}
+.white-renewal .wr-cta-band{background:var(--wr-green-l);padding:40px var(--wr-gap)}
+.white-renewal .wr-schedule .white-cta-card{margin-top:8px!important}
+
+/* ---------- アイコン（CSS で描く：本文は標準ブロックのまま） ---------- */
+.white-renewal .wr-ico{--ico:none}
+.white-renewal .wr-ico::before{content:"";flex:none;display:block;border-radius:50%;background:#fff var(--ico) center/58% no-repeat}
+.white-renewal .wr-ico-ot{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke-linecap='round'%3E%3Ccircle cx='20' cy='11' r='5.5' stroke='%234F9E70' stroke-width='1.8'/%3E%3Cpath d='M9 33c0-6.1 4.9-11 11-11s11 4.9 11 11' stroke='%234F9E70' stroke-width='1.8'/%3E%3Cpath d='M20 26.5c-1.2-1.4-3.6-1.1-3.6 1 0 1.6 2.2 3 3.6 4 1.4-1 3.6-2.4 3.6-4 0-2.1-2.4-2.4-3.6-1z' fill='%236EC38C' stroke='none'/%3E%3C/svg%3E")}
+.white-renewal .wr-ico-group{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke-width='1.7' stroke-linecap='round'%3E%3Ccircle cx='13' cy='13' r='4' stroke='%234F9E70'/%3E%3Ccircle cx='27' cy='13' r='4' stroke='%234F9E70'/%3E%3Cpath d='M5.5 29c0-4.4 3.4-8 7.5-8s7.5 3.6 7.5 8M19.5 29c0-4.4 3.4-8 7.5-8s7.5 3.6 7.5 8' stroke='%234F9E70'/%3E%3Cpath d='M8 33.5h24' stroke='%236EC38C'/%3E%3C/svg%3E")}
+.white-renewal .wr-ico-form{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='7.5' width='22' height='27' rx='3' stroke='%234F9E70' stroke-width='1.8'/%3E%3Cpath d='M15 7.5V6a1.5 1.5 0 0 1 1.5-1.5h7A1.5 1.5 0 0 1 25 6v1.5' stroke='%234F9E70' stroke-width='1.8'/%3E%3Cpath d='M14 16h12M14 21h8' stroke='%234F9E70' stroke-width='1.6'/%3E%3Cpath d='M15 27.5l2.6 2.6 5.4-5.4' stroke='%236EC38C' stroke-width='2'/%3E%3C/svg%3E")}
+.white-renewal .wr-ico-breath{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 15h17a4 4 0 1 0-4-4M6 21h24a4 4 0 1 1-4 4' stroke='%234F9E70'/%3E%3Cpath d='M6 27h9' stroke='%236EC38C'/%3E%3C/svg%3E")}
+.white-renewal .wr-ico-adjust{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M8 12h24M8 20h24M8 28h24' stroke='%234F9E70' fill='none'/%3E%3Ccircle cx='15' cy='12' r='3' stroke='%236EC38C' fill='%23fff'/%3E%3Ccircle cx='26' cy='20' r='3' stroke='%236EC38C' fill='%23fff'/%3E%3Ccircle cx='18' cy='28' r='3' stroke='%236EC38C' fill='%23fff'/%3E%3C/svg%3E")}
+.white-renewal .wr-ico-heart{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 31s-11-6.5-11-14a6 6 0 0 1 11-3.3A6 6 0 0 1 31 17c0 7.5-11 14-11 14z' stroke='%234F9E70'/%3E%3Cpath d='M15.5 17.5l3 3 6-6' stroke='%236EC38C'/%3E%3C/svg%3E")}
+.white-renewal .wr-ico-chat{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 10h24v15H18l-6 5v-5H8z' stroke='%234F9E70'/%3E%3Cpath d='M13 16h14M13 20h9' stroke='%236EC38C'/%3E%3C/svg%3E")}
+.white-renewal .wr-ico-lotus{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 29c-4-3-6-7-6-11 3 1 5 3 6 6 1-3 3-5 6-6 0 4-2 8-6 11zM8 29h24' stroke='%234F9E70'/%3E%3Cpath d='M20 24c0-5 0-9 0-13 2 3 3 6 3 9' stroke='%236EC38C'/%3E%3C/svg%3E")}
+.white-renewal .wr-ico-cal{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='8' y='10' width='24' height='21' rx='3' stroke='%234F9E70'/%3E%3Cpath d='M8 16h24M14 7v5M26 7v5' stroke='%234F9E70'/%3E%3Cpath d='M15 23l3 3 6-6' stroke='%236EC38C'/%3E%3C/svg%3E")}
+
+/* ---------- トップ ---------- */
+/* News（note カード：元のデザイン。タイトルは小さめ・字間 0） */
+.white-renewal .wr-news .note-card-title{font-size:14px!important;letter-spacing:0!important;line-height:1.55!important}
+.white-renewal .wr-news .note-card-date{font-size:14px!important}
+/* Feature */
+.white-renewal .wr-points{display:flex;flex-direction:column;gap:12px}
+.white-renewal .wr-point{display:grid;grid-template-columns:72px 1fr;column-gap:14px;align-items:center;background:var(--wr-bg);border-radius:14px;padding:16px}
+.white-renewal .wr-point::before{width:72px;height:72px;grid-row:1/3}
+.white-renewal .wr-point h3{font-size:16px!important;font-weight:700!important;color:var(--wr-dark)!important;align-self:end}
+.white-renewal .wr-point p{font-size:14px!important;line-height:1.7!important;align-self:start}
+.white-renewal .wr-mini-cta{display:flex;flex-direction:column;align-items:center;gap:8px}
+.white-renewal .wr-mini-cta__text{font-weight:700;color:var(--wr-brown)!important}
+.white-renewal .wr-mini-cta .white-cta-buttons{width:100%;max-width:311px}
+/* Class カード */
+.white-renewal .wr-cards{display:flex;flex-direction:column;gap:24px}
+.white-renewal .wr-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06);display:flex;flex-direction:column}
+.white-renewal .wr-card__img{margin:0!important}
+.white-renewal .wr-card__img img{width:100%;aspect-ratio:335/190;object-fit:cover;display:block}
+.white-renewal .wr-card__body{padding:22px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.white-renewal .wr-card h3{font-size:20px!important;font-weight:700!important;color:var(--wr-dark)!important;line-height:1.5!important}
+.white-renewal .wr-tags{display:flex;flex-wrap:wrap;gap:6px}
+.white-renewal .wr-tag{font-size:14px!important;font-weight:500;line-height:1.5!important;padding:4px 10px;border-radius:6px;background:var(--wr-green-l);color:var(--wr-green-d)!important}
+.white-renewal .wr-tag.is-price{background:var(--wr-beige-l);color:var(--wr-brown)!important}
+.white-renewal .wr-tag.is-pending{background:var(--wr-pend-bg);color:var(--wr-pend-text)!important}
+.white-renewal .wr-link{text-align:right;margin-top:auto!important}
+.white-renewal .wr-link a,.white-renewal .wr-other__title a{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--wr-green-d);text-decoration:none;padding:6px 0}
+/* お客様の声 */
+.white-renewal .wr-voice .white-voice__item{background:#fff;border-radius:16px;padding:26px 22px;box-shadow:0 4px 14px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:14px;box-sizing:border-box}
+.white-renewal .wr-voice__who{align-self:flex-start;font-size:14px!important;font-weight:500;color:var(--wr-green-d)!important;background:var(--wr-green-l);border-radius:14px;padding:4px 12px;line-height:1.5!important}
+.white-renewal .wr-voice__lead{font-size:17px!important;font-weight:700;color:var(--wr-dark)!important;line-height:1.7!important}
+/* スケジュール */
+.white-renewal .wr-schedule .yoga-schedule img{border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.white-renewal .wr-schedule .wr-note{text-align:center;color:var(--wr-beige)!important}
+/* プロフィール（トップ） */
+.white-renewal .wr-profile .wr-inner{align-items:center;text-align:center}
+.white-renewal .wr-avatar img{width:180px;height:180px;border-radius:50%;object-fit:cover}
+.white-renewal .wr-profile__role{font-size:14px!important;color:var(--wr-brown)!important}
+.white-renewal h3.wr-profile__name,.white-renewal .wr-greeting h2.wr-h2{font-size:22px!important;font-weight:700!important;color:var(--wr-dark)!important;letter-spacing:.1em!important;margin-top:-22px!important}
+.white-renewal .wr-greeting h2.wr-h2{margin-top:0!important;font-size:26px!important;padding-bottom:0!important}
+.white-renewal .wr-greeting h2.wr-h2::after{content:none!important}
+.white-renewal .wr-profile__en{font-family:var(--wr-en)!important;font-size:18px!important;color:var(--wr-green)!important;margin-top:-26px!important}
+.white-renewal .wr-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.white-renewal .wr-badges p{font-size:14px!important;font-weight:500;color:var(--wr-green-d)!important;background:#fff;border-radius:16px;padding:4px 12px;line-height:1.5!important}
+.white-renewal .wr-profile__text{text-align:left}
+/* 過ごし方 */
+.white-renewal .wr-steps{background:#fff;border-radius:16px;padding:8px 20px;counter-reset:wrstep}
+.white-renewal .wr-step{display:grid;grid-template-columns:36px 1fr;column-gap:14px;padding:16px 0;border-bottom:1px dashed var(--wr-line)}
+.white-renewal .wr-step:last-child{border-bottom:0}
+.white-renewal .wr-step::before{counter-increment:wrstep;content:counter(wrstep);grid-row:1/3;width:36px;height:36px;border-radius:50%;background:var(--wr-green);color:#fff;font-family:var(--wr-en);font-weight:600;font-size:20px;display:flex;align-items:center;justify-content:center}
+.white-renewal .wr-step h3{font-size:16px!important;font-weight:700!important;color:var(--wr-dark)!important;line-height:1.5!important}
+.white-renewal .wr-steps.is-mini{background:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.white-renewal .wr-steps.is-mini .wr-step{background:#fff;border-radius:10px;border:0;padding:14px;align-items:center;grid-template-columns:auto 1fr}
+.white-renewal .wr-steps.is-mini .wr-step::before{content:"STEP " counter(wrstep);width:auto;height:auto;background:none;color:var(--wr-green);font-size:16px;letter-spacing:.04em}
+.white-renewal .wr-steps.is-mini h3{font-size:15px!important;font-weight:500!important}
+/* FAQ（詳細ブロック） */
+.white-renewal .wr-faq-list{display:flex;flex-direction:column;gap:10px}
+.white-renewal details.wr-faq{background:#fff!important;border:1px solid var(--wr-line)!important;border-radius:12px!important;margin:0!important;padding:0!important;box-shadow:none!important}
+.white-renewal details.wr-faq>summary{display:grid!important;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:16px!important;font-size:16px!important;font-weight:500;color:var(--wr-dark)!important;line-height:1.6;list-style:none;cursor:pointer;background:none!important;border:0!important}
+.white-renewal details.wr-faq>summary::-webkit-details-marker{display:none}
+.white-renewal details.wr-faq>summary::before{content:"Q"!important;font-family:var(--wr-en);font-weight:600;font-size:22px;color:var(--wr-green);line-height:1;position:static!important;background:none!important;width:auto!important;height:auto!important}
+.white-renewal details.wr-faq>summary::after{content:""!important;width:14px;height:14px;position:static!important;background:linear-gradient(var(--wr-beige),var(--wr-beige)) center/14px 1.6px no-repeat,linear-gradient(var(--wr-beige),var(--wr-beige)) center/1.6px 14px no-repeat!important;transition:transform .3s;border:0!important;transform:none!important}
+.white-renewal details.wr-faq[open]>summary::after{background:linear-gradient(var(--wr-beige),var(--wr-beige)) center/14px 1.6px no-repeat!important}
+.white-renewal details.wr-faq>p{position:relative;padding:0 16px 18px 48px!important;margin:0!important;font-size:15px!important}
+.white-renewal details.wr-faq>p:first-of-type::before{content:"A";position:absolute;left:18px;top:-2px;font-family:var(--wr-en);font-weight:600;font-size:22px;color:var(--wr-beige);line-height:1.2}
+/* アクセス */
+.white-renewal .wr-access__row{display:flex;flex-direction:column;gap:20px}
+.white-renewal .wr-access__info{display:flex;flex-direction:column;gap:10px}
+.white-renewal .wr-access__img img{width:100%;aspect-ratio:335/220;object-fit:cover;border-radius:16px;display:block}
+.white-renewal .wr-access__info h3{font-size:17px!important;font-weight:700!important;color:var(--wr-dark)!important;margin-top:6px!important}
+.white-renewal .wr-pin{position:relative;padding-left:26px!important}
+.white-renewal .wr-pin::before{content:"";position:absolute;left:0;top:.35em;width:18px;height:18px;background:var(--wr-green);-webkit-mask:var(--wr-pin) center/contain no-repeat;mask:var(--wr-pin) center/contain no-repeat}
+.white-renewal .wr-pin.is-sub::before{background:var(--wr-beige)}
+.white-renewal{--wr-pin:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='%23000' stroke-width='1.5'%3E%3Cpath d='M9 16s5-4.6 5-8.5A5 5 0 0 0 4 7.5C4 11.4 9 16 9 16z'/%3E%3Ccircle cx='9' cy='7.5' r='1.8'/%3E%3C/svg%3E")}
+.white-renewal .wr-access__info .wr-more{justify-content:flex-start;margin-top:6px!important}
+.white-renewal .wr-map{background:var(--wr-green-l);border-radius:16px;min-height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.white-renewal .wr-map.is-loaded{display:block}
+.white-renewal .wr-map iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+.white-renewal .wr-map__btn{background:none!important;border:0!important;box-shadow:none!important;color:var(--wr-green-d);font-size:15px;font-weight:500;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;padding:40px;width:100%;height:100%;font-family:inherit}
+.white-renewal .wr-map__pin{width:28px;height:28px;background:var(--wr-green-d);-webkit-mask:var(--wr-pin) center/contain no-repeat;mask:var(--wr-pin) center/contain no-repeat}
+/* Instagram */
+.white-renewal .wr-insta .wr-inner{align-items:center;gap:16px}
+.white-renewal .wr-insta__title{font-family:var(--wr-en)!important;font-weight:600;font-size:22px!important;letter-spacing:.1em!important;color:var(--wr-dark)!important}
+
+/* ---------- 下層ページ ---------- */
+.white-renewal .wr-hero{position:relative;height:190px;overflow:hidden}
+.white-renewal .wr-hero__img{margin:0!important;height:100%}
+.white-renewal .wr-hero__img img{width:100%;height:100%;object-fit:cover;display:block}
+.white-renewal .wr-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.5));pointer-events:none}
+.white-renewal .wr-hero__text{position:absolute;left:var(--wr-gap);right:var(--wr-gap);bottom:20px;z-index:1;max-width:var(--wr-max);margin:0 auto}
+.white-renewal .wr-hero__en{font-family:var(--wr-en)!important;font-weight:500;font-size:34px!important;line-height:1.2!important;color:#fff!important;letter-spacing:.02em!important}
+.white-renewal h1.wr-hero__title{font-size:18px!important;font-weight:700!important;color:#fff!important;letter-spacing:.08em!important;line-height:1.5!important}
+.white-renewal h1.wr-hero__title .white-h1-ja{display:none}
+.white-renewal .wr-crumb{max-width:var(--wr-max);margin:0 auto;padding:12px var(--wr-gap);font-size:14px;color:var(--wr-text);display:flex;gap:6px;flex-wrap:wrap}
+.white-renewal .wr-crumb a{color:var(--wr-brown);text-decoration:none}
+.white-renewal .wr-crumb span[aria-hidden]{color:var(--wr-beige)}
+.white-renewal .wr-sec.wr-sub{padding-top:32px;padding-bottom:48px}
+.white-renewal .wr-sub .wr-inner{gap:24px}
+/* 定員・時間など */
+.white-renewal .wr-info{display:flex;gap:8px}
+.white-renewal .wr-info__cell{flex:1 1 0;background:#fff;border:1px solid var(--wr-line);border-radius:10px;padding:12px 14px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.white-renewal .wr-info__cell:last-child{flex:0 0 auto;padding-left:18px;padding-right:18px}
+.white-renewal .wr-info__k{font-size:14px!important;color:var(--wr-beige)!important;line-height:1.5!important}
+.white-renewal .wr-info__v{font-size:15px!important;font-weight:700;color:var(--wr-dark)!important;line-height:1.5!important;white-space:nowrap}
+/* こんな方におすすめ */
+.white-renewal .wr-rec{background:var(--wr-green-l);border-radius:16px;padding:24px 16px;display:flex;flex-direction:column;gap:12px}
+.white-renewal .wr-rec__title{text-align:center;font-size:17px!important;font-weight:700;color:var(--wr-green-d)!important;letter-spacing:.08em!important}
+.white-renewal ul.wr-check{list-style:none;margin:0!important;padding:0!important;display:flex;flex-direction:column;gap:12px}
+.white-renewal ul.wr-check li{background:#fff;border-radius:10px;padding:12px 12px 12px 42px;position:relative;font-size:15px;font-weight:500;color:var(--wr-dark);line-height:1.6;margin:0}
+.white-renewal ul.wr-check li::before{content:"";position:absolute;left:12px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:var(--wr-green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.2l2.6 2.6L14 7.6' stroke='%23fff' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.white-renewal .wr-box{background:#fff;border:1.5px solid var(--wr-green);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;gap:10px}
+.white-renewal .wr-box h3{font-size:17px!important;font-weight:700!important;color:var(--wr-green-d)!important}
+/* クラスの特徴（アイコン＋文） */
+.white-renewal .wr-feats{display:flex;flex-direction:column;gap:10px}
+.white-renewal .wr-feat{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--wr-line);border-radius:14px;padding:12px 18px 12px 14px}
+.white-renewal .wr-feat::before{width:48px;height:48px;background-color:var(--wr-green-l)}
+.white-renewal .wr-feat p{font-size:15px!important;font-weight:500;color:var(--wr-dark)!important;line-height:1.6!important}
+.white-renewal .wr-photo img{width:100%;aspect-ratio:335/200;object-fit:cover;border-radius:12px;display:block}
+/* 料金表 */
+.white-renewal .wr-price{background:#fff;border:1px solid var(--wr-line);border-radius:16px;overflow:hidden}
+.white-renewal .wr-price__head{background:var(--wr-green);color:#fff!important;font-size:14px!important;font-weight:700;padding:12px 18px;line-height:1.5!important}
+.white-renewal .wr-price .yoga-price-table{margin:0!important;border:0!important}
+.white-renewal .wr-price .yoga-price-table table{width:100%;border-collapse:collapse;border:0!important;margin:0}
+.white-renewal .wr-price .yoga-price-table thead{display:none}
+.white-renewal .wr-price .yoga-price-table tr:nth-child(even){background:var(--wr-bg)}
+.white-renewal .wr-price .yoga-price-table th,.white-renewal .wr-price .yoga-price-table td{border:0!important;padding:14px 18px!important;font-size:15px!important;background:transparent!important;color:var(--wr-dark)!important;vertical-align:middle}
+.white-renewal .wr-price .yoga-price-table th{text-align:left;font-weight:500}
+.white-renewal .wr-price .yoga-price-table td{text-align:right;font-weight:700;font-size:17px!important;white-space:nowrap}
+.white-renewal .wr-price .yoga-price-table tr:first-child td{color:var(--wr-green-d)!important}
+.white-renewal .wr-pending{background:var(--wr-pend-bg);border:1px dashed var(--wr-pend-line);border-radius:16px;padding:24px;text-align:center}
+.white-renewal .wr-pending p{color:var(--wr-pend-text)!important;font-weight:700;font-size:17px!important}
+/* 選び方ガイド */
+.white-renewal .wr-guide{background:var(--wr-beige-l);border-radius:16px;padding:22px 16px;display:flex;flex-direction:column;gap:12px}
+.white-renewal .wr-guide__title{text-align:center;font-size:17px!important;font-weight:700;color:var(--wr-brown)!important}
+.white-renewal .wr-guide__item{background:#fff;border-radius:12px;padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px}
+.white-renewal .wr-guide__who{align-self:flex-start;background:var(--wr-beige-l);border-radius:12px;padding:3px 10px;font-size:14px!important;font-weight:500;color:var(--wr-brown)!important;line-height:1.5!important}
+.white-renewal .wr-guide__row{display:flex;align-items:baseline;gap:8px}
+.white-renewal .wr-guide__plan{flex:1;font-size:17px!important;font-weight:700;color:var(--wr-green-d)!important;line-height:1.5!important}
+.white-renewal .wr-guide__price{font-size:14px!important;font-weight:500;color:var(--wr-dark)!important;white-space:nowrap}
+.white-renewal .wr-guide__item>p:last-child{font-size:14px!important;line-height:1.7!important}
+/* ほかのクラス */
+.white-renewal .wr-others .wr-inner{gap:12px}
+.white-renewal .wr-others__title{font-size:17px!important;font-weight:700;color:var(--wr-dark)!important;letter-spacing:.08em!important}
+.white-renewal .wr-others__list{display:flex;flex-direction:column;gap:12px}
+.white-renewal .wr-other{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;overflow:hidden;position:relative;padding-right:14px}
+.white-renewal .wr-other__img{margin:0!important;flex:none}
+.white-renewal .wr-other__img img{width:96px;height:80px;object-fit:cover;display:block}
+.white-renewal .wr-other__body{flex:1;display:flex;flex-direction:column;gap:2px}
+.white-renewal .wr-other__title{font-size:16px!important;font-weight:700}
+.white-renewal .wr-other__title a{color:var(--wr-dark);padding:0;justify-content:space-between;width:100%}
+.white-renewal .wr-other__title a::after{color:var(--wr-green-d)}
+.white-renewal .wr-other__title a::before{content:"";position:absolute;inset:0}
+.white-renewal .wr-other__meta{font-size:14px!important;color:var(--wr-beige)!important}
+/* プロフィール */
+.white-renewal .wr-greeting .wr-inner{gap:20px}
+.white-renewal .wr-greeting__img img{width:100%;aspect-ratio:335/400;object-fit:cover;border-radius:16px;display:block}
+.white-renewal .wr-greeting__body{display:flex;flex-direction:column;gap:14px}
+.white-renewal .wr-greeting .wr-profile__en{margin-top:-14px!important}
+.white-renewal .wr-philosophy .wr-inner{gap:20px}
+.white-renewal .wr-catch{text-align:center;font-size:19px!important;font-weight:700;color:var(--wr-green-d)!important;line-height:1.7!important}
+.white-renewal .wr-career{background:#fff;border-radius:16px;padding:6px 20px}
+.white-renewal .wr-career__row{padding:18px 0;border-bottom:1px solid var(--wr-line);display:flex;flex-direction:column;gap:8px}
+.white-renewal .wr-career__row:last-child{border-bottom:0}
+.white-renewal .wr-career__k{font-size:15px!important;font-weight:700;color:var(--wr-dark)!important;border-left:4px solid var(--wr-green);padding-left:10px!important;line-height:1.4!important}
+.white-renewal ul.wr-career__v{list-style:none;margin:0!important;padding:0!important;display:flex;flex-direction:column;gap:6px}
+.white-renewal ul.wr-career__v li{font-size:15px;line-height:1.8;color:var(--wr-dark);margin:0}
+.white-renewal .wr-video .wp-block-embed{border-radius:14px;overflow:hidden;margin:0;width:100%}
+.white-renewal .wr-video .wp-block-embed__wrapper{position:relative;aspect-ratio:16/9;width:100%}
+.white-renewal .wr-video .wp-block-embed__wrapper::before{content:none}
+/* アクセス */
+.white-renewal .wr-dl{background:#fff;border-radius:14px;padding:6px 18px}
+.white-renewal .wr-dl__row{padding:14px 0;border-bottom:1px solid var(--wr-line);display:flex;flex-direction:column;gap:4px}
+.white-renewal .wr-dl__row:last-child{border-bottom:0}
+.white-renewal .wr-dl__k{font-size:14px!important;font-weight:700;color:var(--wr-green-d)!important;line-height:1.5!important}
+.white-renewal .wr-dl__v{color:var(--wr-dark)!important}
+.white-renewal .wr-access__map{display:flex;flex-direction:column;gap:14px}
+.white-renewal .wr-route{display:flex;flex-direction:column;gap:16px}
+.white-renewal .wr-route__step{display:grid;grid-template-columns:120px 1fr;column-gap:12px;align-items:start}
+.white-renewal .wr-route__step .wr-pending{grid-row:1/3;height:90px;padding:8px;display:flex;align-items:center;justify-content:center;border-radius:10px}
+.white-renewal .wr-route__step .wr-pending p{font-size:14px!important;font-weight:400;line-height:1.5!important}
+.white-renewal .wr-route__no{font-family:var(--wr-en)!important;font-weight:600;font-size:16px!important;color:var(--wr-green)!important;letter-spacing:.04em!important}
+.white-renewal .wr-route__step p:last-child{font-weight:500;color:var(--wr-dark)!important}
+.white-renewal .wr-route__step p.is-pending-text{color:var(--wr-pend-text)!important}
+.white-renewal .wr-gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.white-renewal .wr-gallery figure{margin:0!important}
+.white-renewal .wr-gallery img{width:100%;aspect-ratio:1/1.2;object-fit:cover;border-radius:12px;display:block}
+.white-renewal .wr-gallery figure:last-child{grid-column:1/3}
+.white-renewal .wr-gallery figure:last-child img{aspect-ratio:335/200}
+/* FAQ ページ */
+.white-renewal .wr-faq-nav{display:flex;flex-wrap:wrap;gap:8px}
+.white-renewal .wr-faq-nav p{flex:1 1 calc(50% - 4px);margin:0}
+.white-renewal .wr-faq-nav p:last-child{flex-basis:100%}
+.white-renewal .wr-faq-nav a{display:block;text-align:center;background:#fff;border:1px solid var(--wr-line);border-radius:20px;padding:10px 12px;font-size:14px;font-weight:700;color:var(--wr-dark);text-decoration:none}
+.white-renewal .wr-faq-nav p.is-current a{background:var(--wr-green);border-color:var(--wr-green);color:#fff}
+.white-renewal .wr-faq-body{display:flex;flex-direction:column;gap:28px}
+.white-renewal .wr-faq-cat{display:flex;flex-direction:column;gap:10px;scroll-margin-top:90px}
+.white-renewal h2.wr-faq-cat__title{font-size:18px!important;font-weight:700!important;color:var(--wr-dark)!important;border-left:4px solid var(--wr-green)!important;padding-left:10px!important;line-height:1.3!important}
+/* 料金一覧 */
+.white-renewal .wr-price-nav-sec{padding-bottom:8px!important}
+.white-renewal .wr-price-nav-sec .wr-inner{gap:8px}
+.white-renewal .wr-price-nav-sec .wr-note{color:var(--wr-beige)!important}
+.white-renewal .wr-price-nav{display:flex;gap:6px}
+.white-renewal .wr-price-nav p{flex:1;margin:0}
+.white-renewal .wr-price-nav a{display:block;text-align:center;background:#fff;border:1px solid var(--wr-line);border-radius:10px;padding:12px 4px 22px;font-size:14px;font-weight:700;color:var(--wr-dark);text-decoration:none;position:relative}
+.white-renewal .wr-price-nav a::after{content:"";position:absolute;left:50%;bottom:8px;width:12px;height:12px;margin-left:-6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3.5 5.5 7 9l3.5-3.5' stroke='%236EC38C' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.white-renewal [id^="price-"]{scroll-margin-top:80px}
+.white-renewal .wr-contact .wr-more{justify-content:center}
+
+/* ---------- フッター ---------- */
+.white-renewal .wr-footer{background:var(--wr-beige-l);padding:48px 20px 110px;color:var(--wr-text)}
+.white-renewal .wr-footer__inner{max-width:var(--wr-max);margin:0 auto;display:flex;flex-direction:column;gap:28px}
+.white-renewal .wr-footer__logo{width:140px;height:auto;display:block}
+.white-renewal .wr-footer__addr{font-size:14px;line-height:1.8;margin:14px 0 0}
+.white-renewal .wr-footer__nav{display:flex;gap:10px}
+.white-renewal .wr-footer__col{flex:1}
+.white-renewal .wr-footer__h{font-family:var(--wr-en);font-weight:600;font-size:18px;color:var(--wr-green);margin:0 0 6px}
+.white-renewal .wr-footer__col ul{list-style:none;margin:0;padding:0}
+.white-renewal .wr-footer__col a{display:block;padding:8px 0;font-size:14px;color:var(--wr-dark);text-decoration:none;letter-spacing:0}
+.white-renewal .wr-footer__bottom{max-width:var(--wr-max);margin:28px auto 0;border-top:1px solid var(--wr-line);padding-top:20px}
+.white-renewal .wr-footer__legal,.white-renewal .wr-footer__legal a{font-size:14px;color:var(--wr-text);line-height:2}
+.white-renewal .wr-footer__legal a{display:block;text-decoration:none}
+.white-renewal .wr-footer__legal span[aria-hidden]{display:none}
+.white-renewal .wr-footer__copy{font-size:14px;color:var(--wr-beige);margin:16px 0 0}
+
+/* ---------- スマホのヘッダー：アイコンを大きく ---------- */
+.white-renewal .yss-mheader .yss-mheader__btn{width:60px!important}
+.white-renewal .yss-mheader .yss-mheader__btn i,.white-renewal .yss-mheader .yss-mheader__btn .yss-icon{width:30px!important;height:30px!important;font-size:28px!important}
+.white-renewal .yss-mheader .yss-mheader__btn span{font-size:14px!important;height:18px!important;line-height:18px!important}
+
+/* ---------- PC ---------- */
+@media (min-width:900px){
+  .white-renewal{--wr-gap:40px}
+  .white-renewal .wr-sec{padding:64px var(--wr-gap) 96px}
+  .white-renewal .wr-sec.wr-sub{padding-top:53px;padding-bottom:80px}
+  .white-renewal .wr-sec p{font-size:16px}
+  .white-renewal .wr-inner{gap:36px}
+  .white-renewal .wr-en{font-size:48px!important;margin-bottom:-32px!important}
+  .white-renewal h2.wr-h2{font-size:26px!important}
+  .white-renewal .wr-points{flex-direction:row;gap:32px}
+  .white-renewal .wr-point{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:36px 24px 28px}
+  .white-renewal .wr-point::before{width:96px;height:96px}
+  .white-renewal .wr-point h3{font-size:19px!important}
+  .white-renewal .wr-point p{font-size:15px!important}
+  .white-renewal .wr-cards{flex-direction:row;gap:32px}
+  .white-renewal .wr-card{flex:1}
+  .white-renewal .wr-card__img img{aspect-ratio:339/220}
+  .white-renewal .wr-voice .white-voice{gap:24px}
+  .white-renewal .wr-schedule .wr-inner>.yoga-schedule,.white-renewal .wr-schedule .wp-block-shortcode{max-width:640px!important;margin:0 auto!important}
+  .white-renewal .wr-profile .wr-inner{display:grid;grid-template-columns:420px 1fr;column-gap:72px;row-gap:16px;text-align:left;align-items:start}
+  .white-renewal .wr-profile .wr-inner>*{grid-column:2}
+  .white-renewal .wr-profile .wr-avatar{grid-column:1;grid-row:1/9}
+  .white-renewal .wr-profile .wr-avatar img{width:420px;height:520px;border-radius:20px}
+  .white-renewal .wr-profile .wr-en,.white-renewal .wr-profile h2.wr-title{text-align:left!important}
+  .white-renewal .wr-profile .wr-badges{justify-content:flex-start}
+  .white-renewal .wr-profile .wr-more{justify-content:flex-start}
+  .white-renewal .wr-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;background:none;padding:0}
+  .white-renewal .wr-steps .wr-step{background:#fff;border-radius:14px;padding:24px;border:0}
+  .white-renewal .wr-steps.is-mini{display:flex}
+  .white-renewal .wr-faqs .wr-faq-list,.white-renewal .wr-faqs .wr-more{max-width:840px;margin-left:auto!important;margin-right:auto!important;width:100%}
+  .white-renewal .wr-access__row{flex-direction:row;gap:56px}
+  .white-renewal .wr-access__row>*{flex:1}
+  .white-renewal .wr-map{min-height:420px}
+  .white-renewal .wr-map iframe{min-height:420px}
+  .white-renewal .wr-cta-band{padding:72px var(--wr-gap)}
+  .white-renewal .wr-cta .white-cta-buttons{flex-direction:row!important;max-width:none;justify-content:center;gap:20px}
+  .white-renewal .wr-cta .white-cta-buttons .wp-block-button{width:311px!important}
+  .white-renewal .wr-hero{height:320px}
+  .white-renewal .wr-hero__text{bottom:48px;left:180px;right:auto}
+  .white-renewal .wr-hero::after{background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,0) 70%)}
+  .white-renewal .wr-hero__en{font-size:56px!important}
+  .white-renewal h1.wr-hero__title{font-size:24px!important}
+  .white-renewal .wr-crumb{padding:16px 0}
+  .white-renewal .wr-info{max-width:640px}
+  .white-renewal .wr-feats{flex-direction:row;gap:20px}
+  .white-renewal .wr-feat{flex:1;flex-direction:column;text-align:center;padding:28px 16px;gap:16px}
+  .white-renewal .wr-feat::before{width:72px;height:72px}
+  .white-renewal .wr-photo{max-width:640px}
+  .white-renewal .wr-guide__item{padding:16px 18px}
+  .white-renewal .wr-price,.white-renewal .wr-pending{max-width:840px}
+  .white-renewal .wr-others__list{flex-direction:row;gap:20px}
+  .white-renewal .wr-other{flex:1}
+  .white-renewal .wr-other__img img{width:180px;height:120px}
+  .white-renewal .wr-greeting .wr-inner{flex-direction:row;align-items:center;gap:72px}
+  .white-renewal .wr-greeting__img{flex:0 0 440px}
+  .white-renewal .wr-greeting__img img{aspect-ratio:440/560}
+  .white-renewal .wr-philosophy .wr-inner>p:not(.wr-en):not(.wr-catch){max-width:760px;margin:0 auto!important;text-align:center}
+  .white-renewal .wr-career{max-width:880px;margin:0 auto!important;padding:12px 48px;width:100%;box-sizing:border-box}
+  .white-renewal .wr-career__row{flex-direction:row;gap:40px;padding:24px 0}
+  .white-renewal .wr-career__k{flex:0 0 160px;align-self:flex-start}
+  .white-renewal ul.wr-career__v{flex:1}
+  .white-renewal .wr-video .wp-block-embed{max-width:840px}
+  .white-renewal .wr-route{flex-direction:row;gap:20px}
+  .white-renewal .wr-route__step{flex:1;display:flex;flex-direction:column;gap:10px}
+  .white-renewal .wr-route__step .wr-pending{height:190px}
+  .white-renewal .wr-gallery{grid-template-columns:repeat(4,1fr);gap:16px}
+  .white-renewal .wr-gallery figure:last-child{grid-column:auto}
+  .white-renewal .wr-gallery img,.white-renewal .wr-gallery figure:last-child img{aspect-ratio:258/300}
+  .white-renewal .wr-faq-page .wr-inner{flex-direction:row;gap:56px;align-items:flex-start}
+  .white-renewal .wr-faq-nav{flex:0 0 240px;flex-direction:column;position:sticky;top:110px}
+  .white-renewal .wr-faq-nav p{flex:none}
+  .white-renewal .wr-faq-nav a{text-align:left;border-radius:10px;padding:14px 18px;font-size:15px}
+  .white-renewal .wr-faq-body{flex:1}
+  .white-renewal .wr-price-nav{gap:16px}
+  .white-renewal .wr-price-nav a{font-size:16px;padding:16px 4px 26px}
+  .white-renewal .wr-footer{padding:64px 40px 48px}
+  .white-renewal .wr-footer__inner{flex-direction:row;gap:80px}
+  .white-renewal .wr-footer__nav{gap:80px}
+  .white-renewal .wr-footer__col{flex:none}
+  .white-renewal .wr-footer__legal{display:flex;gap:24px}
+}

@@ -1,0 +1,42 @@
+/* お客様の声カード */
+.yoga-reviews{ color: var(--yoga-main, #8aa285); }  /* ドット色がここを継承する */
+.yoga-review{
+  display: flex;
+  flex-direction: column;
+  gap: 0;                 /* 要素間の余白は各要素側で最小限に */
+  height: 100%;
+  padding: 24px;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  background: #fff;
+  color: #333;
+}
+/* 頭部：アイコンと年代・属性を横並び。ブロックの縦幅はアイコン（48px）に合わせ、
+   下マージンなし。年代・属性はアイコンの縦中央。 */
+.entry-content .yoga-review__head{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 !important;
+  min-height: 0;
+}
+.entry-content .yoga-review__head > .yoga-review__avatar{ margin: 0 !important; }
+.yoga-review__avatar,
+.yoga-review__avatar img{ width: 48px; height: 48px; border-radius: 999px; flex: 0 0 48px; display: block; }
+.entry-content .yoga-review__head > .yoga-review__attr{ font-size: 16px; opacity: .7; margin: 0 !important; align-self: center; }
+
+/* h4 見出し：子テーマ/Cocoon の装飾（●マーク・余白）を無効化。
+   案件ごとに SVG や CSS で装飾する前提。 */
+.entry-content h4.yoga-review__title{
+  margin: 0 !important;
+  padding-left: 0 !important;
+  font-size: 16px;
+  font-weight: 600;
+}
+.entry-content h4.yoga-review__title::before,
+.entry-content h4.yoga-review__title::after{ content: none !important; display: none !important; }
+
+.yoga-review__text{ font-size: 14px; line-height: 1.8; margin: 0 !important; }
+
+/* カードとナビゲーション（ドット）の間の余白は不要 */
+.yss-carousel__viewport:has(.yoga-reviews) .yss-carousel__dots{ margin-top: 0; }

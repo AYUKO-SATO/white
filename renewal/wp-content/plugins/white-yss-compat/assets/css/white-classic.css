@@ -1,0 +1,1399 @@
+/* White の旧子テーマ（cocoon-child-master/style.css）の写し。ブロックテーマ（Studio Block Starter）で使う。
+   @import のフォントは互換調整プラグインが別に読み込む。 */
+@charset "UTF-8";
+
+/*!
+Theme Name: Cocoon Child
+Description: Cocoon専用の子テーマ
+Theme URI: https://wp-cocoon.com/
+Author: わいひら
+Author URI: https://nelog.jp/
+Template:   cocoon-master
+Version:    1.1.3
+*/
+
+/************************************
+** 子テーマ用のスタイルを書く
+************************************/
+/*必要ならばここにコードを書く*/
+
+
+
+
+
+/***文字と見出し関連***/
+
+/* =========================================================
+   h1だけ Josefin Sans（フロントのみ）
+   ========================================================= */
+
+/* Google Fonts 読み込み */
+
+
+
+
+/* =========================================================
+   フォント最終案：上品・可読性重視・ロゴに寄せる
+   ========================================================= */
+
+/* 本文（日本語） */
+body:not(.wp-admin){
+  font-family: "Zen Kaku Gothic New",
+               "Hiragino Kaku Gothic ProN",
+               "Noto Sans JP",
+               "Yu Gothic", sans-serif !important;
+  font-weight: 400;
+  line-height: 2.0;
+}
+
+
+
+
+
+/* 英字見出し */
+body:not(.wp-admin) h1,
+body:not(.wp-admin) h2,
+body:not(.wp-admin) h4 {
+  font-family: "Cormorant Infant", serif !important;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+}
+
+/* h1だけ少し印象を出す */
+body:not(.wp-admin) h1{
+  font-weight: 500;
+font-size: 40px;
+}
+
+
+ 
+/*見出しデザインのリセット*/
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+background-color: transparent; /* 背景色を透明に*/
+border: none; /*枠線なし*/
+border-radius: 0; /*角の丸みなし*/
+padding-left: 0px;
+padding-right: 0px;
+	padding-bottom: 0px;
+}
+
+
+/**h2調整**/
+/* 固定ページ h2：左右にライン */
+body.page h2{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* 文字と線の間隔 */
+  text-align: center;
+}
+
+/* 左右の線 */
+body.page h2::before,
+body.page h2::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ccc; /* 線の色 */
+}
+.article h2 {
+	font-size: 26px !important;
+	padding-top: 10px;
+	padding-bottom: 4px;
+}
+
+
+/**h3調整**/
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3::before,
+h3::after {
+    width: 2px;
+    height: 20px;
+    background-color: #BBA492;
+    content: '';
+}
+
+h3::before {
+    transform: rotate(-35deg);
+    margin-right: 20px;
+}
+
+h3::after {
+    transform: rotate(35deg);
+    margin-left: 20px;
+	vertical-align: center !important;
+}
+
+
+/*マーカー色*/
+.marker-under {
+background: linear-gradient(transparent 60%, #eef2da 60%);
+}
+
+
+/*リンクホバー色*/
+a:hover {
+transition : 0.5s;
+}
+
+
+/* =========================================================
+   文字色を最終確定
+   - h1のみグリーン
+   - それ以外は #666
+   ※このブロックはCSSの一番下に置く
+   ========================================================= */
+
+/* 全体の基本色 */
+html, body{
+  color: #666666 !important;
+}
+
+/* ほぼ全要素を #666 に統一（Cocoonの強い指定にも勝つ） */
+body,
+body *{
+  color: inherit;
+}
+
+/* 見出しも全部 #666 に（h1だけ別指定にする） */
+h2, h3, h4, h5, h6{
+  color: #666666 !important;
+}
+
+/* リンクも #666（visitedも含む） */
+a, a:visited{
+  color: #666666 !important;
+}
+a:hover{
+  color: #666666 !important;  /* ← 白にしたいならここだけ #fff に戻してOK */
+}
+
+/* h1だけグリーン */
+h1{
+  color: #6EC38C !important;
+}
+
+/* 例外：h3装飾に残っている #333 を殺す（重要） */
+h3{
+  color: #666666 !important;
+}
+
+
+
+/***文字と関連終わり***/
+
+
+
+
+
+/***余白関連***/
+
+/*ヘッダーフッターまわりの調整*/
+.breadcrumb,
+.article-header,
+.article-footer {
+display: none;
+}
+
+.header-container-in {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+/*pの余白*/
+.has-text-align-center {
+	margin-bottom: 0px !important;
+}
+
+
+
+
+/*セクションまわりの細々とした余白の調整*/
+.main {
+	border: none;
+padding-bottom:0!important;
+margin-bottom:0!important;
+margin-left:0!important;
+margin-right:0!important;
+}
+
+
+/*フルワイドと余白の調整*/
+.wp-block-cover, .n2-section-smartslider {
+margin-bottom:0!important;
+margin-top:0!important;
+padding-bottom:0!important;
+bottom: 0;
+}
+
+.wp-block-columns {
+margin-bottom:0!important;
+}
+
+.entry-content, .content {
+padding-top:0!important;
+padding-bottom:0!important;
+margin-top:0!important;
+margin-bottom:0!important;
+}
+
+.content-bottom {
+margin:0;
+}
+
+.article {
+padding-bottom:0px!important;
+margin-bottom:0px!important;
+}
+
+
+/*フッター*/
+.footer {
+margin-top:0px;
+}
+
+/***余白関連終わり***/
+
+
+
+/*SNSシェア非表示*/
+.page .sns-share,
+.page .sns-follow {
+display: none ;
+}
+
+.veu_socialSet.veu_socialSet-position-after.veu_contentAddSection {
+	display: none;
+}
+
+
+/*水平スクロールバー非表示*/
+body {
+overflow-x:clip;
+font-size: 12px;
+}
+
+
+/*フルワイド*/
+.fullwide {
+width: 100vw;
+margin: 0 calc(50% - 50vw);
+padding: 0 calc(50vw - 50%);
+}
+
+
+/*グローバルメニュー*/
+/*メニュー項目の左右の余白*/
+#navi .navi-in>ul>li>a{
+padding: 0 0em;
+}
+
+/*ホバー時にメニューの色が薄くなるのをやめる*/
+#navi .navi-in a:hover {
+background-color: rgb(255 255 255 / 0);
+}
+
+/*ホバー時にメニューにアンダーラインを出す*/
+#navi .navi-in a:after{
+position: absolute;/*線の位置を絶対配置に*/
+content: "";/*文字はなし*/
+opacity: 1;
+left: 10px;/*線の位置*/
+bottom: 5px;/*線の位置*/
+height: 2%;/*線の高さ*/
+width: 90%;/*幅いっぱいに線を引く*/
+background: #dddddd ;/*線の色*/
+transform: scale(0,1);/*ホバー前は線を消す*/
+transition: 0.3s;/*線が0→100%になるまでの秒数*/
+}
+
+#navi .navi-in a:hover:after{
+transform: scale(1);/*マウスオーバー後、線を100%出す*/
+}
+
+/*フォントサイズ等変更*/
+.navi-in .menu-header .item-label{
+letter-spacing: 2px;
+font-size: 15px;
+font-weight: 600;
+}
+
+
+
+/*グローバルメニュー終わり*/
+
+
+
+/*一部の中央寄せテキストをスマホだけ左寄せにする*/
+@media (max-width: 768px) {
+  .smalltext {
+    text-align: left !important;
+  }
+	
+	.icon {
+		display: none !important;
+	}
+}
+
+
+
+/*ヘッダーカスタマイズ*/
+/*お問い合わせボタン（ヘッダー）*/
+
+
+#header-in .header-contact img {
+  max-width: none !important;         /* ← 160px上限を解除 */
+  width: 80px !important;            /* お好みで 220〜280px などに */
+  height: auto !important;
+  display: block;
+}
+
+
+	/* 位置を上へ：PC */
+@media (min-width: 960px){
+  #header-in .header-contact{
+    margin-top: 15px !important;   /* ← ここを 0〜12px で微調整 */
+  }
+}
+	
+#header-in .header-contact {
+  display: flex !important;      /* ← これを追加：子要素を横並びにする */
+  flex-direction: row;           /* 横並び（※なくてもOK。rowが初期値） */
+  gap: 1px !important;           /* アイコン同士の間隔 */
+  align-items: center;           /* 縦位置をそろえる */
+}
+
+
+/* 余白の混入対策（テーマ側の余白をゼロに） */
+#header-in .header-contact a {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0;               /* 画像周りの行間を消す */
+}
+#header-in .header-contact img {
+  display: block;
+  margin: 0 !important;
+}
+	
+
+
+/*ヘッダーロゴ(テキスト)の反対側に問い合わせボタン表示*/
+
+div#header-in {
+/* ヘッダーロゴ(テキスト)と問い合わせボタンを横並び */
+flex-direction: row;
+}
+
+.header-in .logo-header {
+/* ヘッダーロゴ(テキスト)と問い合わせボタンの位置を両端にする */
+margin-right: auto;
+
+}
+
+/*お問い合わせボタン終わり*/
+
+
+
+/*マップマークピン*/
+.fa-map-pin {
+  font-size: 25px !important;
+}
+
+/* スマホヘッダー：上下に5pxずつ余白 */
+.mobile-header-menu-buttons {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+/*字間*/
+p, body {
+letter-spacing: 1.3px !important;
+}
+
+/*ブログ記事一覧のカスタマイズ*/
+.new-entry-cards {
+margin: auto;
+width: 110vh;
+}
+
+.new-entry-card-thumb {
+transition-duration: 0.3s; /*アニメーションの時間*/ box-shadow: 0px 10px 10px -5px rgba(85,85,85,0.75); /*通常時の画像の影*/
+}
+
+.new-entry-card-thumb:hover {
+transform: translateY(-6px); /*マウスホバーで上に移動*/
+box-shadow: 0px 5px 5px -5px rgba(85,85,85,0.75); /*マウスホバー時の画像の影*/
+}
+
+.new-entry-card-thumb img { /*画像下の隙間を消す*/
+vertical-align: bottom;
+}
+
+.widget-entry-card-thumb {
+width: 200px !important;
+}
+
+.new-entry-card-title {
+margin-top: 5px; /*上に余白を付ける*/
+line-height: 1; /*行間を広く*/
+font-size: 15px !important;
+padding-bottom: 0px!important;
+}
+
+.is-list-horizontal.large-thumb .card-title, .is-list-horizontal.large-thumb-on .card-title {
+height: 1.5em;
+}
+
+/*タイトルと日付の間の調整*/
+.new-entry-card-title:hover {
+color: #85A4B5 ;/*マウスホバー時の色*/
+}
+
+/*記事一覧の投稿日表示カスタム*/
+/*ウィジェット記事の投稿日・更新日を表示*/
+.widget-entry-card-date {
+display:block;
+text-align: right;/*右寄せ*/
+}
+
+/*更新日を非表示にする*/
+.widget-entry-card-update-date{
+display: none;
+}
+
+/*日付にアイコン追加*/
+.widget-entry-card-post-date::before,
+
+.widget-entry-card-update-date::before{
+font-family: "Font Awesome 5 Free";
+padding-right: 3px; /*右余白*/
+font-size:13px;
+}
+
+/*更新日アイコン*/
+.widget-entry-card-update-date::before{
+font-weight:bold;
+content: "\f1da"; /*fa-historyアイコン*/
+}
+
+
+/*レスポンシブ*/
+@media screen and (max-width: 768px){
+.new-entry-cards {
+margin: auto;
+width: 45vh;
+}
+.new-entry-card-title {
+font-size: 13px; /*スマホでの文字の大きさ*/
+padding-left:5px;
+	letter-spacing: 1.2px !important;
+line-height: 1.2; /*スマホでの行間*/
+}
+
+.e-card-info {
+color: #666 ; /*色を薄く*/
+}
+
+.new-entry-card-snippet { padding-left: 5px; font-size: 10px; } 
+.e-card-info {font-size: 13px; /*スマホでの文字サイズ*/}
+}
+
+
+
+/*記事一覧カスタマイズ終わり*/
+
+
+
+
+
+
+/* =========================================================
+   Font Awesome（全体フォントより優先）
+   ========================================================= */
+.fa,
+.fas,
+.far{
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important; /* 細くしたければ 400 */
+}
+.fab{
+  font-family: "Font Awesome 5 Brands" !important;
+  font-weight: 500 !important;
+}
+
+
+/* =========================================================
+   YouTube（中央寄せ）
+   ========================================================= */
+.wp-block-embed__wrapper .video-container{
+  margin: 0 auto !important;
+}
+
+
+/* =========================================================
+   投稿ページ：メタ/アイキャッチ/カテゴリ類
+   ========================================================= */
+
+/* Cocoon標準のカテゴリ行（表示される場合の余白） */
+.entry-categories-tags.ctdt-one-row{
+  margin-bottom: 5px !important;
+}
+
+/* Cocoon標準の表示（カテゴリ・タグ）を非表示 */
+.single .entry-categories,
+.single .entry-categories-tags,
+.single .entry-categories-tags.ctdt-one-row{
+  display: none !important;
+}
+
+/* Cocoonアイキャッチの見た目 */
+.single .eye-catch-wrap{
+  margin: 15px 0;
+}
+.single .eye-catch img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* あなたの「本文先頭に追加する投稿メタ」 */
+.my-post-topmeta{
+  margin-bottom: 10px !important;
+}
+
+/* 投稿メタ全体 */
+.my-post-meta{
+  margin: 16px 0 24px;
+}
+
+/* 上段（日付・カテゴリ・タグ） */
+.my-post-meta-top{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* カテゴリ（あなたの出力） */
+.my-meta-cat{
+  background: #c7a492;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* タグ（あなたの出力） */
+.my-meta-tag{
+  font-size: 14px;
+  color: #777;
+  text-decoration: none;
+}
+
+/* アイキャッチ（あなたの出力） */
+.my-meta-eyecatch{
+  margin-top: 12px;
+}
+.my-meta-eyecatch img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 記事タイトル（あなたの出力） */
+.my-post-title{
+  font-size: 26px; /* 24〜30pxで調整 */
+  font-weight: 500;
+  line-height: 1.6;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* 日付（あなたの出力） */
+.my-meta-date{ color: #666; }
+.my-meta-date i.fa-clock{ color: #BBA492; }
+
+/* 本文先頭にある「最初の画像ブロック」を非表示（必要な時だけ） */
+.single .entry-content > figure.wp-block-image:first-child,
+.single .entry-content > .wp-block-image:first-child{
+  display: none !important;
+}
+
+/* スマホ：タイトル等 */
+@media (max-width: 768px){
+  .single .my-post-datetitle{ font-size: 18px; }
+  .my-post-title{ font-size: 18px; }
+  .pagetitle{ font-size: 28px !important; }
+}
+
+
+/* =========================================================
+   Smash Balloon：ヘッダーh3の before/after（スラッシュ）を消す
+   ========================================================= */
+#sb_instagram .sbi_feedtheme_header_text h3::before,
+#sb_instagram .sbi_feedtheme_header_text h3::after{
+  content: none !important;
+  display: none !important;
+}
+
+
+/* =========================================================
+   固定ページ：上の余白を0（記事には効かない）
+   ========================================================= */
+body.page .main{
+  padding-top: 0 !important;
+}
+
+
+/* =========================================================
+   834px以下：モバイル調整（ヘッダー/フッター/スライダー等）
+   ========================================================= */
+@media (max-width: 834px){
+
+  .logo-menu-button{ margin-left: 0 !important; }
+
+  .header-container-in.hlt-top-menu.wrap{
+    display: none !important;
+  }
+
+  /* Smart Slider：スマホだけ縦幅を広げる */
+  .n2-ss-slider{
+    min-height: 260px !important;
+  }
+
+  /* フッターモバイルボタン */
+  .mobile-footer-menu-buttons .menu-button{
+    background-color: #c7d1b8;
+  }
+  .mobile-footer-menu-buttons .menu-button a{
+    color: #ffffff !important;
+  }
+
+  /* 文字だけにする */
+  .mobile-footer-menu-buttons .menu-button-in{
+    display: block !important;
+    text-align: center !important;
+    padding: 10px 0 !important;
+  }
+  .mobile-footer-menu-buttons .menu-caption{
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    line-height: 1.3 !important;
+  }
+
+  /* アイコンを消す（i/svg/FA/擬似要素） */
+  .mobile-footer-menu-buttons .menu-button i,
+  .mobile-footer-menu-buttons .menu-button svg,
+  .mobile-footer-menu-buttons .menu-button .fa,
+  .mobile-footer-menu-buttons .menu-button .fas,
+  .mobile-footer-menu-buttons .menu-button .far,
+  .mobile-footer-menu-buttons .menu-button .fab{
+    display: none !important;
+  }
+  .mobile-footer-menu-buttons .menu-button-in::before,
+  .mobile-footer-menu-buttons .menu-button-in::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  /* モバイルスライドインメニュー：項目の縦幅 */
+  .menu-drawer li a{
+    padding: 16px 20px;
+    display: block;
+  }
+
+  /* カラムの縦ギャップ */
+  .wp-block-columns{ row-gap: 5px !important; }
+
+  /* モバイルヘッダーアイコンサイズ */
+  .mobile-menu-buttons .custom-menu-icon .fa,
+  .mobile-menu-buttons .custom-menu-icon .fas,
+  .mobile-menu-buttons .custom-menu-icon .fab{
+    font-size: 26px;
+  }
+  .mobile-menu-buttons .fa-bars{
+    font-size: 27px;
+  }
+	
+
+	
+}
+
+@media screen and (max-width: 1023px) {
+  .logo-menu-button {
+    flex-grow: 0 !important;
+    width: auto !important;
+  }
+}
+
+
+/* =========================================================
+   note RSS カード（重複を整理）
+   - PC：3列
+   - 900px以下：2列
+   - 600px以下：2列（要望に合わせて）
+   ========================================================= */
+.note-card-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 900px){
+  .note-card-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px){
+  .note-card-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+.note-card{
+  display: block;
+  text-decoration: none !important;
+  color: inherit;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.note-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+}
+
+.note-card-thumb{
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-size: cover;
+  background-position: center;
+  background-color: #f2f5f5;
+}
+.note-card-thumb.is-noimg{
+  background-image: linear-gradient(135deg, rgba(158,202,203,0.20), rgba(216,230,232,0.15));
+}
+
+.note-card-body{
+  display: block;
+  padding: 14px 14px 16px;
+}
+.note-card-date{
+  display: block;
+  font-size: 12px;
+  opacity: .65;
+  margin-bottom: 6px;
+}
+.note-card-title{
+  display: block;
+  font-size: 14px !important;
+  letter-spacing: 1px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1px;
+}
+
+
+
+
+/* =========================================
+   note：3枚表示 + 横スクロール(最大9枚) + ナビ矢印（1枚ずつ）
+   ※このCSSは “JSで .note-card-grid をラップして transform で動かす” 前提
+   ========================================= */
+
+/* 外枠（JSが生成：.note-carousel） */
+.note-carousel{
+  position: relative;
+  width: 100%;
+}
+
+/* クリップ領域（JSが生成：.note-track） */
+.note-track{
+  overflow: hidden !important;          /* ← スクロールバーを出さない */
+  width: 100%;
+}
+
+/* 走らせる列（既存：.note-card-grid） */
+.note-card-grid{
+  --note-gap: 18px;
+
+  display: flex !important;
+  gap: var(--note-gap) !important;
+
+  /* 重要：overflow-x は使わない（scroll-snap崩れの元） */
+  overflow: visible !important;
+
+  /* 重要：JSで transform を当てる前提 */
+  transform: translate3d(0,0,0);
+  will-change: transform;
+  transition: transform .35s ease;
+
+  /* 矢印用の余白は “外側” で確保するので、ここでは付けない */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 3枚が綺麗に入るカード幅（PC/スマホ共通で3枚） */
+.note-card{
+  flex: 0 0 calc((100% - (var(--note-gap) * 2)) / 3) !important;
+  max-width: calc((100% - (var(--note-gap) * 2)) / 3) !important;
+
+  display:block;
+  text-decoration:none !important;
+  color: inherit !important;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  overflow:hidden;
+  background:#fff;
+  transition: transform .15s ease, box-shadow .15s ease, color .15s ease;
+}
+
+/* タブレット/スマホでも “3枚表示” のまま（要件どおり） */
+@media (max-width: 900px){
+  .note-card-grid{ --note-gap: 14px; }
+}
+@media (max-width: 600px){
+  .note-card-grid{ --note-gap: 12px; }
+}
+
+/* サムネ等 */
+.note-card-thumb{
+  display:block;
+  width:100%;
+  aspect-ratio: 16/10;
+  background-size: cover;
+  background-position: center;
+  background-color: #f2f5f5;
+}
+.note-card-body{ padding: 5px 10px 10px 12px; }
+.note-card-date{ font-size: 12px; opacity: .65; margin-bottom: 1px; }
+.note-card-title{
+  font-size: 14px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+/* ホバーで文字色をグレー */
+.note-card:hover .note-card-title,
+.note-card:hover .note-card-date{ color: #666666 !important; }
+
+/* =========================================
+   note：記事数が少ない時（PC:3以下 / SP:2以下）は中央寄せ＆ナビ非表示
+   ========================================= */
+.note-carousel.is-few .note-card-grid{
+  justify-content: center !important;
+  transform: none !important;
+}
+
+.note-carousel.is-few .note-nav-btn,
+.note-carousel.is-few .note-dots{
+  display: none !important;
+}
+
+
+
+/* ===== 矢印ボタン（JSで注入される） ===== */
+.note-nav-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.note-nav-btn:hover{ background: #fff; }
+.note-nav-btn.is-prev{ left: -18px; }
+.note-nav-btn.is-next{ right: -18px; }
+
+@media (max-width: 600px){
+  .note-nav-btn.is-prev{ left: -10px; }
+  .note-nav-btn.is-next{ right: -10px; }
+}
+
+.note-nav-btn svg{
+  width: 16px;
+  height: 16px;
+  opacity: .75;
+}
+
+/* 押せない状態（JSで disabled を付ける想定） */
+.note-nav-btn:disabled{
+  opacity: .35;
+  cursor: default;
+  pointer-events: none;
+}
+
+
+
+
+/* noteカルーセル：ドット（ページネーション）を使わない */
+.note-carousel .note-dots{
+  display: none !important;
+}
+
+
+
+
+ /*faz見た目調整*/
+.faq-question-content.faq-item-content {
+	line-height: 1.4;
+	letter-spacing: 0.15em;
+	font-size: 15px;
+}
+
+.faq-answer-content.faq-item-content{
+	line-height: 1.4;
+	letter-spacing: 0.15em;
+	font-size: 15px;
+}
+
+
+.faq-question.faq-item {
+	padding-top: 4px !important;
+	padding-bottom: 8px !important;
+}
+
+.faq-question-label.faq-item-label {
+	font-size: 18px !important;
+}
+
+.faq-answer-label.faq-item-label {
+	font-size: 18px !important;
+}
+
+/* =========================================================
+   フロント画面のみ：文字色の最終指定
+   ========================================================= */
+
+/* 管理画面を除外 */
+body:not(.wp-admin){
+  color: #666666;
+}
+
+/* フロント画面内の要素だけ */
+body:not(.wp-admin) *{
+  color: inherit;
+}
+
+/* 見出し（h1以外） */
+body:not(.wp-admin) h2,
+body:not(.wp-admin) h3,
+body:not(.wp-admin) h4,
+body:not(.wp-admin) h5,
+body:not(.wp-admin) h6{
+  color: #666666 !important;
+}
+
+/* h1だけグリーン */
+body:not(.wp-admin) h1{
+  color: #6EC38C !important;
+}
+
+/* リンク */
+body:not(.wp-admin) a,
+body:not(.wp-admin) a:visited{
+  color: #666666 !important;
+}
+body:not(.wp-admin) a:hover{
+  color: #6EC38C !important;
+}
+
+
+
+/* =========================================================
+   フロント画面のみ：ボタン（白→hoverでグリーン反転）
+   - Cocoonの強い指定に勝つため !important 多め
+   - ボタンの中の文字（span等）も一緒に色を反転
+   - 管理画面は除外
+   ========================================================= */
+
+:root{
+  --btn-green: #6EC38C;
+}
+
+/* 1) ボタン本体（a/button/input）を白背景＋緑文字＋緑枠に固定 */
+body:not(.wp-admin) .wp-block-button__link,
+body:not(.wp-admin) .wp-block-button__link:visited,
+body:not(.wp-admin) .btn-wrap > a,
+body:not(.wp-admin) .btn > a,
+body:not(.wp-admin) a.btn,
+body:not(.wp-admin) button,
+body:not(.wp-admin) input[type="submit"],
+body:not(.wp-admin) input[type="button"]{
+  background: #fff !important;
+  background-color: #fff !important;
+  background-image: none !important;   /* Cocoon背景画像対策 */
+  color: var(--btn-green) !important;
+  border: 1px solid var(--btn-green) !important;
+
+  box-shadow: none !important;
+  text-decoration: none !important;
+
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease !important;
+}
+
+/* 2) ボタン内の文字（span/strong/iなど）も緑に固定（body * の影響を遮断） */
+body:not(.wp-admin) .wp-block-button__link *,
+body:not(.wp-admin) .btn-wrap > a *,
+body:not(.wp-admin) .btn > a *,
+body:not(.wp-admin) a.btn *,
+body:not(.wp-admin) button *,
+body:not(.wp-admin) input[type="submit"] *,
+body:not(.wp-admin) input[type="button"] *{
+  color: var(--btn-green) !important;
+}
+
+/* 3) hover/focusで反転（背景グリーン＋文字白） */
+body:not(.wp-admin) .wp-block-button__link:hover,
+body:not(.wp-admin) .wp-block-button__link:focus,
+body:not(.wp-admin) .btn-wrap > a:hover,
+body:not(.wp-admin) .btn > a:hover,
+body:not(.wp-admin) a.btn:hover,
+body:not(.wp-admin) button:hover,
+body:not(.wp-admin) input[type="submit"]:hover,
+body:not(.wp-admin) input[type="button"]:hover{
+  background: var(--btn-green) !important;
+  background-color: var(--btn-green) !important;
+  background-image: none !important;
+  color: #fff !important;
+  border-color: var(--btn-green) !important;
+}
+
+/* 4) hover時：中の文字も白に */
+body:not(.wp-admin) .wp-block-button__link:hover *,
+body:not(.wp-admin) .wp-block-button__link:focus *,
+body:not(.wp-admin) .btn-wrap > a:hover *,
+body:not(.wp-admin) .btn > a:hover *,
+body:not(.wp-admin) a.btn:hover *,
+body:not(.wp-admin) button:hover *{
+  color: #fff !important;
+}
+
+/* 5) Cocoonが:hoverでopacity下げる系を無効化（よくある負けパターン） */
+body:not(.wp-admin) .wp-block-button__link:hover,
+body:not(.wp-admin) .btn-wrap > a:hover,
+body:not(.wp-admin) .btn > a:hover,
+body:not(.wp-admin) a.btn:hover,
+body:not(.wp-admin) button:hover{
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+
+
+/* =========================================
+   note：スマホ専用 2件表示カルーセル
+   - スクロール非表示
+   - 丸ページネーション
+   - 左右ナビあり
+   ========================================= */
+@media (max-width: 768px){
+
+  /* 外枠（JSで生成） */
+  body:not(.wp-admin) .note-carousel{
+    position: relative;
+    width: 100%;
+  }
+
+  /* 表示領域 */
+  body:not(.wp-admin) .note-track{
+    overflow: hidden !important;
+    width: 100%;
+  }
+
+  /* 横並び本体 */
+  body:not(.wp-admin) .note-card-grid{
+    --note-gap: 12px;
+
+    display: flex !important;
+    gap: var(--note-gap) !important;
+
+    transform: translateX(0);
+    transition: transform .35s ease;
+    will-change: transform;
+
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* カード：2件表示 */
+  body:not(.wp-admin) .note-card{
+    flex: 0 0 calc((100% - var(--note-gap)) / 2) !important;
+    max-width: calc((100% - var(--note-gap)) / 2) !important;
+  }
+
+  /* タイトルサイズ */
+  body:not(.wp-admin) .note-card-title{
+    font-size: 12px !important;
+  }
+
+  /* ===== 左右ナビ ===== */
+  body:not(.wp-admin) .note-nav-btn{
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid #6EC38C;
+    background: #ffffff;
+    color: #6EC38C;
+
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    transition: background-color .3s ease, color .3s ease;
+  }
+
+  body:not(.wp-admin) .note-nav-btn:hover{
+    background: #6EC38C;
+    color: #ffffff;
+  }
+
+  body:not(.wp-admin) .note-nav-btn.is-prev{ left: -8px; }
+  body:not(.wp-admin) .note-nav-btn.is-next{ right: -8px; }
+
+  /* ===== ページネーション ===== */
+  body:not(.wp-admin) .note-dots{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  body:not(.wp-admin) .note-dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.25);
+    transition: background .3s ease, transform .3s ease;
+  }
+
+  body:not(.wp-admin) .note-dot.is-active{
+    background: #6EC38C;
+    transform: scale(1.3);
+  }
+}
+
+/* =========================================
+   CTAだけ：反転させず「下線だけ」ホバー
+   使い方：ボタンブロックに class="cta-underline" を付ける
+   ========================================= */
+
+:root{ --cta-green:#6EC38C; }
+
+/* CTAは常に白抜き固定（反転ブロックに勝つ） */
+body:not(.wp-admin) .wp-block-button__link.cta-underline{
+  background: #fff !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  color: var(--cta-green) !important;
+  border: 1px solid var(--cta-green) !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* CTAの中の文字も常にグリーン固定 */
+body:not(.wp-admin) .wp-block-button__link.cta-underline *{
+  color: var(--cta-green) !important;
+}
+
+/* CTAホバー：反転を無効化（背景・文字色を固定） */
+body:not(.wp-admin) .wp-block-button__link.cta-underline:hover,
+body:not(.wp-admin) .wp-block-button__link.cta-underline:focus{
+  background: #fff !important;
+  background-color: #fff !important;
+  color: var(--cta-green) !important;
+  border-color: var(--cta-green) !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+body:not(.wp-admin) .wp-block-button__link.cta-underline:hover *,
+body:not(.wp-admin) .wp-block-button__link.cta-underline:focus *{
+  color: var(--cta-green) !important;
+}
+
+/* 下線（競合回避で ::before 推奨） */
+body:not(.wp-admin) .wp-block-button__link.cta-underline::before{
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 10px !important;
+  transform: translateX(-50%) !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: var(--cta-green) !important;
+  transition: width .35s ease !important;
+  pointer-events: none !important;
+}
+
+/* ホバーで下線が伸びる */
+body:not(.wp-admin) .wp-block-button__link.cta-underline:hover::before{
+  width: 70% !important;
+}
+
+:root{
+  --accent-green: #6EC38C;
+  --accent-brown: #8B6A55;
+  --accent-brown-soft: rgba(139,106,85,.35);
+}
+
+/* h2 左右ライン（body.page h2 の線） */
+body.page h2::before,
+body.page h2::after{
+  background-color: var(--accent-brown-soft) !important;
+}
+
+/* h3 の斜めスラッシュ（今 #BBA492 のところを統一） */
+h3::before,
+h3::after{
+  background-color: var(--accent-brown) !important;
+}
+
+/* 日付の時計アイコン（すでに指定ありなら茶色へ） */
+.my-meta-date i.fa-clock{
+  color: var(--accent-brown) !important;
+}
+
+/* noteカードの枠をほんのり茶色に */
+.note-card{
+  border-color: rgba(139,106,85,.18) !important;
+}
+
+
+/*フローの枠の余白調整*/
+/* VK Flow：テキスト下の余白を消す（スマホ） */
+@media (max-width: 575.98px){
+  .vk_flow .vk_flow_frame_text{
+    margin-bottom: 0 !important;
+  }
+	
+.entry-content>*,.demo .entry-content p {
+    line-height: 1.5
+}
+	
+	.vk_flow_frame_text_title {
+		font-size: 1em !important;
+	}
+}
+
+/* 料金表テーブルを横幅100%に */
+ /* テーブル全体を100%に */
+  .wp-block-table table{
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important; /* 割合を安定させる */
+  }
+
+  /* 左セル（項目名） */
+  .wp-block-table table td.has-text-align-left{
+    width: 55% !important;
+    white-space: nowrap; /* できるだけ1行に */
+  }
+
+  /* 右セル（金額） */
+  .wp-block-table table td.has-text-align-right{
+    width: 45% !important;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /* Cocoonの強制改行を無効化 */
+  .wp-block-table table td{
+    word-break: normal !important;
+  }
+
+/*TOPフローの余白調整共通*/
+.vk_flow_frame {
+	padding-top: 15px !important;
+		padding-bottom: 15px !important;
+	padding-right: 17px !important;
+	padding-left: 20px !important;
+}
+
+.vk_flow_frame_text {
+	line-height: 1.2 !important;
+}
+
+
+
+
+/* =========================================================
+   無料相談ボタン：下線アニメーションを完全に無効化
+   ========================================================= */
+body:not(.wp-admin) .is-consult::after,
+body:not(.wp-admin) .is-consult:hover::after{
+  content: none !important;
+  display: none !important;
+}
+
+
+
+
+/* =========================================================
+   1023px以下 / 480px以下（空枠）
+   ========================================================= */
+@media (max-width: 1023px){
+  /* 必要なら追加 */
+}
+
+@media (max-width: 480px){
+  /* 必要なら追加 */
+	
+	/* Reviews 吹き出し：上下余白を +4px */
+p.serif.has-border-color.has-key-color-border-color.has-cocoon-white-background-color.has-background {
+  padding-top: 5px !important;
+  padding-bottom: 10px !important;
+}
+	
+p.serif.has-border-color.has-key-color-border-color.has-cocoon-white-background-color.has-background{
+  padding-top: 5px !important;
+  padding-bottom: 10px !important;
+}
+	
+	.reviews1 {
+		gap: 10px !important;
+	}
+
+}
+
