@@ -266,6 +266,8 @@
 .white-renewal .wr-faq-cat{display:flex;flex-direction:column;gap:10px;scroll-margin-top:90px}
 .white-renewal h2.wr-faq-cat__title{font-size:18px!important;font-weight:700!important;color:var(--wr-dark)!important;border-left:4px solid var(--wr-green)!important;padding-left:10px!important;line-height:1.3!important}
 /* 料金一覧 */
+.white-renewal .yss-mnav__close::after{content:none!important;display:none!important}
+.white-renewal .yss-mnav .yss-mnav__list li:first-child{border-top:0!important}
 .white-renewal .wr-price-nav-sec{padding-bottom:8px!important}
 .white-renewal .wr-price-nav-sec .wr-inner{gap:8px}
 .white-renewal .wr-price-nav-sec .wr-note{color:var(--wr-beige)!important}
