@@ -97,7 +97,12 @@
 .white-renewal .wr-link a,.white-renewal .wr-other__title a{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--wr-green-d);text-decoration:none;padding:6px 0}
 /* お客様の声 */
 .white-renewal .wr-voice .white-voice__item{background:#fff;border-radius:16px;padding:26px 22px;box-shadow:0 4px 14px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:14px;box-sizing:border-box}
-.white-renewal .wr-voice__who{align-self:flex-start;font-size:14px!important;font-weight:500;color:var(--wr-green-d)!important;background:var(--wr-green-l);border-radius:14px;padding:4px 12px;line-height:1.5!important}
+.white-renewal .wr-voice__who{font-size:15px!important;font-weight:700;color:var(--wr-dark)!important;line-height:1.5!important;letter-spacing:.04em}
+.white-renewal .wr-voice__who span{display:block;font-size:14px;font-weight:500;color:var(--wr-green-d)}
+.white-renewal .wr-voice__head{display:flex;align-items:center;gap:10px}
+.white-renewal .wr-voice__head::before{content:"";flex:none;width:52px;height:52px;border-radius:50%;background:var(--wr-green-l) var(--av) center/100% no-repeat}
+.white-renewal .wr-av-a{--av:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke='%234F9E70' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='20' cy='17' r='6'/%3E%3Cpath d='M13 22.5V16.5a7 7 0 0 1 14 0v6'/%3E%3Cpath d='M14 13.5c2.5 0 5-1.2 6.5-3.5 1 2 3 3.5 5.5 3.5'/%3E%3Cpath d='M9 35c0-6 5-10 11-10s11 4 11 10'/%3E%3C/svg%3E")}
+.white-renewal .wr-av-b{--av:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke='%234F9E70' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='20' cy='17' r='6'/%3E%3Ccircle cx='20' cy='7' r='2.6'/%3E%3Cpath d='M14 15.5a6 6 0 0 1 12 0'/%3E%3Cpath d='M9 35c0-6 5-10 11-10s11 4 11 10'/%3E%3C/svg%3E")}
 .white-renewal .wr-voice__lead{font-size:17px!important;font-weight:700;color:var(--wr-dark)!important;line-height:1.7!important}
 /* スケジュール */
 .white-renewal .wr-schedule .yoga-schedule img{border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
