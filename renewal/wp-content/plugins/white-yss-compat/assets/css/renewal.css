@@ -130,15 +130,16 @@
 .white-renewal .wr-steps.is-mini .wr-step::before{content:"STEP " counter(wrstep);width:auto;height:auto;background:none;color:var(--wr-green);font-size:16px;letter-spacing:.04em}
 .white-renewal .wr-steps.is-mini h3{font-size:15px!important;font-weight:500!important}
 /* FAQ（詳細ブロック） */
-.white-renewal .wr-faq-list{display:flex;flex-direction:column;gap:10px}
-.white-renewal details.wr-faq{background:#fff!important;border:1px solid var(--wr-line)!important;border-radius:12px!important;margin:0!important;padding:0!important;box-shadow:none!important}
-.white-renewal details.wr-faq>summary{display:grid!important;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:16px!important;font-size:16px!important;font-weight:500;color:var(--wr-dark)!important;line-height:1.6;list-style:none;cursor:pointer;background:none!important;border:0!important}
+.white-renewal .wr-faq-list{display:flex;flex-direction:column;gap:0}
+.white-renewal details.wr-faq{background:transparent!important;border:0!important;border-bottom:1px solid #DCD3C6!important;border-radius:0!important;margin:0!important;padding:0!important;box-shadow:none!important}
+.white-renewal details.wr-faq:first-of-type{border-top:1px solid #DCD3C6!important}
+.white-renewal details.wr-faq>summary{display:grid!important;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:20px 4px!important;font-size:16px!important;font-weight:500;color:var(--wr-dark)!important;line-height:1.6;list-style:none;cursor:pointer;background:none!important;border:0!important}
 .white-renewal details.wr-faq>summary::-webkit-details-marker{display:none}
 .white-renewal details.wr-faq>summary::before{content:"Q"!important;font-family:var(--wr-en);font-weight:600;font-size:22px;color:var(--wr-green);line-height:1;position:static!important;background:none!important;width:auto!important;height:auto!important}
 .white-renewal details.wr-faq>summary::after{content:""!important;width:14px;height:14px;position:static!important;background:linear-gradient(var(--wr-beige),var(--wr-beige)) center/14px 1.6px no-repeat,linear-gradient(var(--wr-beige),var(--wr-beige)) center/1.6px 14px no-repeat!important;transition:transform .3s;border:0!important;transform:none!important}
 .white-renewal details.wr-faq[open]>summary::after{background:linear-gradient(var(--wr-beige),var(--wr-beige)) center/14px 1.6px no-repeat!important}
-.white-renewal details.wr-faq>p{position:relative;padding:0 16px 18px 48px!important;margin:0!important;font-size:15px!important}
-.white-renewal details.wr-faq>p:first-of-type::before{content:"A";position:absolute;left:18px;top:-2px;font-family:var(--wr-en);font-weight:600;font-size:22px;color:var(--wr-beige);line-height:1.2}
+.white-renewal details.wr-faq>p{position:relative;padding:0 8px 22px 36px!important;margin:0!important;font-size:15px!important}
+.white-renewal details.wr-faq>p:first-of-type::before{content:"A";position:absolute;left:6px;top:-2px;font-family:var(--wr-en);font-weight:600;font-size:22px;color:var(--wr-beige);line-height:1.2}
 /* アクセス */
 .white-renewal .wr-access__row{display:flex;flex-direction:column;gap:20px}
 .white-renewal .wr-access__info{display:flex;flex-direction:column;gap:10px}
@@ -280,7 +281,8 @@
 .white-renewal .wr-faq-nav a{display:block;text-align:center;background:#fff;border:1px solid var(--wr-line);border-radius:20px;padding:10px 12px;font-size:14px;font-weight:700;color:var(--wr-dark);text-decoration:none}
 .white-renewal .wr-faq-nav p.is-current a{background:var(--wr-green);border-color:var(--wr-green);color:#fff}
 .white-renewal .wr-faq-body{display:flex;flex-direction:column;gap:28px}
-.white-renewal .wr-faq-cat{display:flex;flex-direction:column;gap:10px;scroll-margin-top:90px}
+.white-renewal .wr-faq-cat{display:flex;flex-direction:column;gap:0;scroll-margin-top:90px}
+.white-renewal .wr-faq-cat>h2.wr-faq-cat__title{margin-bottom:14px!important}
 .white-renewal h2.wr-faq-cat__title{font-size:18px!important;font-weight:700!important;color:var(--wr-dark)!important;border-left:4px solid var(--wr-green)!important;padding-left:10px!important;line-height:1.3!important}
 /* 料金一覧 */
 .white-renewal .yss-mnav__close::after{content:none!important;display:none!important}
