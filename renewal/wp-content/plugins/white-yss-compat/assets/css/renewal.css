@@ -269,9 +269,12 @@
 .white-renewal .wr-price-nav-sec{padding-bottom:8px!important}
 .white-renewal .wr-price-nav-sec .wr-inner{gap:8px}
 .white-renewal .wr-price-nav-sec .wr-note{color:var(--wr-beige)!important}
-.white-renewal .wr-price-nav{display:flex;width:100%;max-width:640px;box-sizing:border-box;gap:8px}
+.white-renewal .wr-price-nav{display:flex;width:100%;max-width:640px;box-sizing:border-box;gap:0}
 .white-renewal .wr-price-nav p{flex:1;margin:0}
-.white-renewal .wr-price-nav a{display:block;text-align:center;border-radius:999px;padding:11px 4px;font-size:14px;font-weight:700;letter-spacing:.04em;color:#3E8F5C!important;text-decoration:none;background:#EAF6EE;border:1px solid #CFE9D8;transition:background .2s,color .2s,box-shadow .2s}
+.white-renewal .wr-price-nav a{display:block;text-align:center;border-radius:0;padding:13px 4px;font-size:14px;font-weight:700;letter-spacing:.04em;color:#3E8F5C!important;text-decoration:none;background:#EAF6EE;border:1px solid #CFE9D8;transition:background .2s,color .2s,box-shadow .2s}
+.white-renewal .wr-price-nav p+p a{border-left:0}
+.white-renewal .wr-price-nav p:first-child a{border-radius:6px 0 0 6px}
+.white-renewal .wr-price-nav p:last-child a{border-radius:0 6px 6px 0}
 .white-renewal .wr-price-nav p:nth-child(2) a{background:#F7EFE6;border-color:#E6D3BF;color:#9A7356!important}
 .white-renewal .wr-price-nav p:nth-child(3) a{background:#EFEDF5;border-color:#D8D3E8;color:#6B6290!important}
 .white-renewal .wr-price-nav a:hover,.white-renewal .wr-price-nav a:focus-visible{background:#6EC38C;border-color:#6EC38C;color:#fff!important}
