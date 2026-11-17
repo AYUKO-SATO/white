@@ -433,7 +433,7 @@
 .white-renewal .wr-news .note-card{height:auto!important;min-height:0!important}
 .white-renewal .wr-news .note-card-body{padding:10px 12px 14px!important;gap:4px}
 /* 申し込みの帯：下の余白を上とそろえる */
-.white-renewal .wr-cta-band .white-cta-card{margin:0!important}
+.white-renewal .wr-cta-band .white-cta-card{margin:0 auto!important;max-width:720px!important}
 .white-renewal .wr-cta-band .wp-block-block,.white-renewal .wr-cta-band>*{margin-block:0!important}
 /* スマホのヘッダー：ラベルの文字をそろえる、LINE は緑 */
 .white-renewal .yss-mheader .yss-mheader__btn span,.white-renewal .yss-mheader button.yss-mheader__toggle span{font-family:"Zen Kaku Gothic New",sans-serif!important;font-size:14px!important;font-weight:500!important;letter-spacing:.02em!important;color:#555!important;height:18px!important;line-height:18px!important}
