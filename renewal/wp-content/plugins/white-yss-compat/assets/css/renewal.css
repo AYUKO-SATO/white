@@ -243,6 +243,17 @@
 .white-renewal .wr-dl__row:last-child{border-bottom:0}
 .white-renewal .wr-dl__k{font-size:14px!important;font-weight:700;color:var(--wr-green-d)!important;line-height:1.5!important}
 .white-renewal .wr-dl__v{color:var(--wr-dark)!important}
+.white-renewal .wr-price-info{display:flex;flex-direction:column;gap:12px}
+.white-renewal .wr-addon{background:var(--wr-green-l);border-radius:14px;padding:16px 18px 6px}
+.white-renewal .wr-addon__title{font-size:14px!important;font-weight:700;color:var(--wr-green-d)!important;line-height:1.6!important}
+.white-renewal .wr-addon__title span{display:block;font-weight:400;color:var(--wr-text)}
+.white-renewal .wr-addon .wr-dl{background:transparent;padding:0}
+.white-renewal .wr-dl--inline .wr-dl__row{flex-direction:row;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom-color:rgba(110,195,140,.3)}
+.white-renewal .wr-dl--inline .wr-dl__k{color:var(--wr-dark)!important;font-weight:500}
+.white-renewal .wr-dl--inline .wr-dl__v{font-size:16px!important;font-weight:700}
+.white-renewal .wr-dl--points{border:1px solid var(--wr-line)}
+.white-renewal .wr-dl--points .wr-dl__v{font-size:14px!important;line-height:1.8!important}
+.white-renewal .wr-dl--points .wr-dl__v a{color:var(--wr-green-d)!important;text-decoration:underline;text-underline-offset:3px}
 .white-renewal .wr-access__map{display:flex;flex-direction:column;gap:14px}
 .white-renewal .wr-route{display:flex;flex-direction:column;gap:16px}
 .white-renewal .wr-route__step{display:grid;grid-template-columns:120px 1fr;column-gap:12px;align-items:start}
@@ -430,3 +441,6 @@
 .white-renewal .wr-faq-nav p.is-current a,.white-renewal .wr-faq-nav p.is-current a:visited,.white-renewal .wr-faq-nav p.is-current a:hover{background:var(--wr-green)!important;border-color:var(--wr-green)!important;color:#fff!important}
 .white-renewal .wr-faq-nav a{color:var(--wr-dark)!important;transition:background .2s,color .2s}
 .white-renewal h2.wr-faq-cat__title{text-align:left!important;justify-content:flex-start!important}
+
+/* フッター上の余白をなくす */
+.white-renewal .wr-footer,.white-renewal .wp-site-blocks>footer{margin-top:0!important;margin-block-start:0!important}
