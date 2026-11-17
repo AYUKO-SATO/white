@@ -131,15 +131,15 @@
 .white-renewal .wr-steps.is-mini h3{font-size:15px!important;font-weight:500!important}
 /* FAQ（詳細ブロック） */
 .white-renewal .wr-faq-list{display:flex;flex-direction:column;gap:0}
-.white-renewal details.wr-faq{background:transparent!important;border:0!important;border-bottom:1px solid #DCD3C6!important;border-radius:0!important;margin:0!important;padding:0!important;box-shadow:none!important}
-.white-renewal details.wr-faq:first-of-type{border-top:1px solid #DCD3C6!important}
-.white-renewal details.wr-faq>summary{display:grid!important;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:20px 4px!important;font-size:16px!important;font-weight:500;color:var(--wr-dark)!important;line-height:1.6;list-style:none;cursor:pointer;background:none!important;border:0!important}
+.white-renewal details.wr-faq{background:transparent!important;border:0!important;border-radius:0!important;margin:0!important;padding:0!important;box-shadow:none!important}
+.white-renewal details.wr-faq+details.wr-faq{border-top:1px dashed #D5CABB!important}
+.white-renewal details.wr-faq>summary{display:grid!important;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:18px 2px!important;font-size:16px!important;font-weight:500;color:var(--wr-dark)!important;line-height:1.6;list-style:none;cursor:pointer;background:none!important;border:0!important}
 .white-renewal details.wr-faq>summary::-webkit-details-marker{display:none}
-.white-renewal details.wr-faq>summary::before{content:"Q"!important;font-family:var(--wr-en);font-weight:600;font-size:22px;color:var(--wr-green);line-height:1;position:static!important;background:none!important;width:auto!important;height:auto!important}
+.white-renewal details.wr-faq>summary::before{content:"Q"!important;display:flex;align-items:center;justify-content:center;width:30px!important;height:30px!important;border-radius:50%;background:var(--wr-green)!important;color:#fff;font-family:var(--wr-en);font-weight:600;font-size:18px;line-height:1;position:static!important;padding-bottom:2px;box-sizing:border-box}
 .white-renewal details.wr-faq>summary::after{content:""!important;width:14px;height:14px;position:static!important;background:linear-gradient(var(--wr-beige),var(--wr-beige)) center/14px 1.6px no-repeat,linear-gradient(var(--wr-beige),var(--wr-beige)) center/1.6px 14px no-repeat!important;transition:transform .3s;border:0!important;transform:none!important}
 .white-renewal details.wr-faq[open]>summary::after{background:linear-gradient(var(--wr-beige),var(--wr-beige)) center/14px 1.6px no-repeat!important}
-.white-renewal details.wr-faq>p{position:relative;padding:0 8px 22px 36px!important;margin:0!important;font-size:15px!important}
-.white-renewal details.wr-faq>p:first-of-type::before{content:"A";position:absolute;left:6px;top:-2px;font-family:var(--wr-en);font-weight:600;font-size:22px;color:var(--wr-beige);line-height:1.2}
+.white-renewal details.wr-faq>p{position:relative;background:var(--wr-beige-l);border-radius:10px;padding:14px 16px 14px 54px!important;margin:0 0 18px!important;font-size:15px!important}
+.white-renewal details.wr-faq>p:first-of-type::before{content:"A";position:absolute;left:14px;top:13px;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--wr-beige);font-family:var(--wr-en);font-weight:600;font-size:18px;line-height:1;padding-bottom:2px;box-sizing:border-box}
 /* アクセス */
 .white-renewal .wr-access__row{display:flex;flex-direction:column;gap:20px}
 .white-renewal .wr-access__info{display:flex;flex-direction:column;gap:10px}
