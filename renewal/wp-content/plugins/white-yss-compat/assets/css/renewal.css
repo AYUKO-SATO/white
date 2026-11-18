@@ -453,3 +453,6 @@
 
 /* フッター上の余白をなくす */
 .white-renewal .wr-footer,.white-renewal .wp-site-blocks>footer{margin-top:0!important;margin-block-start:0!important}
+
+/* お客様の声：カードの高さは文章の長さに合わせる */
+body.white-renewal .white-voice.yss-carousel__track{align-items:flex-start!important}
