@@ -456,3 +456,14 @@
 
 /* お客様の声：カードの高さは文章の長さに合わせる */
 body.white-renewal .white-voice.yss-carousel__track{align-items:flex-start!important}
+
+/* お客様の声：本文は4行で省略、「続きを読む」で全文（emi reflexology と同じ形） */
+.white-renewal .wr-voice__text{line-height:1.8}
+.white-renewal .wr-voice__text:not(.is-open){display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
+.white-renewal .wr-voice__text.is-animating{display:block;overflow:hidden}
+.white-renewal .wr-voice__toggle{display:none!important}
+.white-renewal .wr-voice__toggle.is-ready{display:flex!important;align-items:center;justify-content:center;gap:6px;margin-top:auto!important;padding-top:12px;border-top:1px dotted var(--wr-line);color:var(--wr-green-d)!important;font-size:14px!important;font-weight:700;cursor:pointer;user-select:none}
+.white-renewal .wr-voice__toggle.is-ready::after{content:"";width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%234F9E70' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .3s}
+.white-renewal .wr-voice__toggle[aria-expanded=true]::after{transform:rotate(180deg)}
+.white-renewal .wr-voice__toggle:focus-visible{outline:2px solid var(--wr-green);outline-offset:4px;border-radius:4px}
+@media(min-width:900px){body.white-renewal .white-voice.yss-carousel__track{align-items:stretch!important}}
