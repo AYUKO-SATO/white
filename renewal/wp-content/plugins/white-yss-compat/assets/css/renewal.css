@@ -496,3 +496,8 @@ body.white-renewal .white-voice.yss-carousel__track{align-items:flex-start!impor
   .white-renewal .wr-faq-page .wr-inner{gap:40px}
   .white-renewal .wr-faq-nav{flex:0 0 220px}
 }
+/* PC：こんな方におすすめは2列 */
+@media(min-width:900px){.white-renewal .wr-rec{padding:28px 24px}.white-renewal ul.wr-check{display:grid!important;grid-template-columns:1fr 1fr;gap:12px}.white-renewal ul.wr-check li{display:flex;align-items:center;min-height:100%;box-sizing:border-box}}
+/* PC：ご予約の流れは横並び */
+@media(min-width:900px){.white-renewal .wr-steps.is-mini{display:grid!important;grid-template-columns:repeat(3,1fr);gap:16px}.white-renewal .wr-steps.is-mini .wr-step{align-content:start;padding:22px 18px}.white-renewal ul.wr-check li{text-wrap:pretty}}
+@media(min-width:900px){.white-renewal .wr-steps.is-mini h3{word-break:auto-phrase;text-wrap:balance}}
