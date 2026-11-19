@@ -501,3 +501,5 @@ body.white-renewal .white-voice.yss-carousel__track{align-items:flex-start!impor
 /* PC：ご予約の流れは横並び */
 @media(min-width:900px){.white-renewal .wr-steps.is-mini{display:grid!important;grid-template-columns:repeat(3,1fr);gap:16px}.white-renewal .wr-steps.is-mini .wr-step{align-content:start;padding:22px 18px}.white-renewal ul.wr-check li{text-wrap:pretty}}
 @media(min-width:900px){.white-renewal .wr-steps.is-mini h3{word-break:auto-phrase;text-wrap:balance}}
+/* 短い説明は文節で折り返す */
+.white-renewal .wr-feat p,.white-renewal ul.wr-check li{word-break:auto-phrase}
