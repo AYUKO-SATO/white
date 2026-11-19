@@ -480,3 +480,19 @@ body.white-renewal .white-voice.yss-carousel__track{align-items:flex-start!impor
 }
 .white-renewal .wr-gallery .wp-lightbox-container img{cursor:zoom-in}
 @media(min-width:900px){.white-renewal .wr-sec.wr-sub .wr-inner>.wr-info{max-width:none!important;width:100%}}
+@media(min-width:900px){
+  .white-renewal .wr-sec.wr-sub .wr-inner>.wr-info{display:grid!important;grid-template-columns:repeat(3,1fr);gap:16px}
+  .white-renewal .wr-sec.wr-sub .wr-inner>.wr-info>*{width:auto!important;flex:none!important;min-width:0}
+  .white-renewal .wr-guide__price{font-size:20px!important;font-weight:700!important;color:var(--wr-green-d)!important;letter-spacing:.02em}
+  .white-renewal .wr-price-nav{max-width:none!important;width:100%}
+}
+/* PC 下層ページ：ページタイトル・パンくず・全ブロックをコンテンツ幅（880px）にそろえる */
+@media(min-width:900px){
+  .white-renewal .wr-hero__text{left:var(--wr-gap);right:var(--wr-gap);max-width:880px;margin:0 auto}
+  .white-renewal .wr-crumb{max-width:880px}
+  .white-renewal .wr-sec.wr-greeting .wr-inner,.white-renewal .wr-sec.wr-faq-page .wr-inner,.white-renewal .wr-others .wr-inner,.white-renewal .wr-career-sec .wr-inner,.white-renewal .wr-philosophy .wr-inner{max-width:880px}
+  .white-renewal .wr-greeting .wr-inner{gap:48px}
+  .white-renewal .wr-greeting__img{flex:0 0 360px}
+  .white-renewal .wr-faq-page .wr-inner{gap:40px}
+  .white-renewal .wr-faq-nav{flex:0 0 220px}
+}
