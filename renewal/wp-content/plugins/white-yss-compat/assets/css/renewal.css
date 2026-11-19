@@ -175,11 +175,10 @@
 .white-renewal .wr-sec.wr-sub{padding-top:32px;padding-bottom:48px}
 .white-renewal .wr-sub .wr-inner{gap:24px}
 /* 定員・時間など */
-.white-renewal .wr-info{display:flex;gap:8px}
-.white-renewal .wr-info__cell{flex:1 1 0;background:#fff;border:1px solid var(--wr-line);border-radius:10px;padding:12px 14px;text-align:center;display:flex;flex-direction:column;gap:2px}
-.white-renewal .wr-info__cell:last-child{flex:0 0 auto;padding-left:18px;padding-right:18px}
+.white-renewal .wr-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.white-renewal .wr-info__cell{min-width:0;background:#fff;border:1px solid var(--wr-line);border-radius:10px;padding:12px 4px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:2px}
 .white-renewal .wr-info__k{font-size:14px!important;color:var(--wr-beige)!important;line-height:1.5!important}
-.white-renewal .wr-info__v{font-size:15px!important;font-weight:700;color:var(--wr-dark)!important;line-height:1.5!important;white-space:nowrap}
+.white-renewal .wr-info__v{font-size:15px!important;font-weight:700;color:var(--wr-dark)!important;line-height:1.5!important;white-space:nowrap;letter-spacing:0!important;font-feature-settings:"palt"}
 /* こんな方におすすめ */
 .white-renewal .wr-rec{background:var(--wr-green-l);border-radius:16px;padding:24px 16px;display:flex;flex-direction:column;gap:12px}
 .white-renewal .wr-rec__title{text-align:center;font-size:17px!important;font-weight:700;color:var(--wr-green-d)!important;letter-spacing:.08em!important}
