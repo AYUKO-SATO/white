@@ -467,3 +467,16 @@ body.white-renewal .white-voice.yss-carousel__track{align-items:flex-start!impor
 .white-renewal .wr-voice__toggle[aria-expanded=true]::after{transform:rotate(180deg)}
 .white-renewal .wr-voice__toggle:focus-visible{outline:2px solid var(--wr-green);outline-offset:4px;border-radius:4px}
 @media(min-width:900px){body.white-renewal .white-voice.yss-carousel__track{align-items:stretch!important}}
+/* PC 下層ページ：本文は 880px の1本の列で中央に（見出し・表・写真・ボタンをそろえる） */
+@media(min-width:900px){
+  .white-renewal .wr-sec.wr-sub:not(.wr-faq-page):not(.wr-greeting) .wr-inner{max-width:880px}
+  .white-renewal .wr-sec.wr-sub .wr-inner>.wr-price,.white-renewal .wr-sec.wr-sub .wr-inner>.wr-pending,.white-renewal .wr-sec.wr-sub .wr-inner>.wr-price-info,.white-renewal .wr-sec.wr-sub .wr-inner>.wp-block-image,.white-renewal .wr-sec.wr-sub .wr-inner>figure{max-width:none;width:100%}
+  .white-renewal .wr-sec.wr-sub .wr-inner>.wp-block-image img,.white-renewal .wr-sec.wr-sub .wr-inner>figure img{width:100%;height:auto}
+}
+@media(min-width:900px){
+  .white-renewal .wr-faqs .wr-faq-list,.white-renewal .wr-faqs .wr-more{max-width:880px}
+  .white-renewal .wr-sub .wr-steps .wr-step{grid-template-columns:1fr;row-gap:6px;justify-items:center;text-align:center;padding:24px 18px}
+  .white-renewal .wr-sub .wr-steps .wr-step::before{grid-row:auto;margin-bottom:6px}
+}
+.white-renewal .wr-gallery .wp-lightbox-container img{cursor:zoom-in}
+@media(min-width:900px){.white-renewal .wr-sec.wr-sub .wr-inner>.wr-info{max-width:none!important;width:100%}}
