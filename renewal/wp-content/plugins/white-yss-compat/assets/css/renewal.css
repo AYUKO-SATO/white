@@ -502,3 +502,7 @@ body.white-renewal .white-voice.yss-carousel__track{align-items:flex-start!impor
 @media(min-width:900px){.white-renewal .wr-steps.is-mini h3{word-break:auto-phrase;text-wrap:balance}}
 /* 短い説明は文節で折り返す */
 .white-renewal .wr-feat p,.white-renewal ul.wr-check li{word-break:auto-phrase}
+/* 定員・時間・日時の枠：文字数に合わせた幅（文字の幅＋残りを均等に） */
+.white-renewal .wr-info,.white-renewal .wr-sec.wr-sub .wr-inner>.wr-info{display:flex!important;gap:8px}
+.white-renewal .wr-info>.wr-info__cell,.white-renewal .wr-sec.wr-sub .wr-inner>.wr-info>.wr-info__cell{flex:1 1 auto!important;width:auto!important;padding-left:10px;padding-right:10px}
+@media(min-width:900px){.white-renewal .wr-info,.white-renewal .wr-sec.wr-sub .wr-inner>.wr-info{gap:16px}}
