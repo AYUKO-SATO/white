@@ -506,3 +506,10 @@ body.white-renewal .white-voice.yss-carousel__track{align-items:flex-start!impor
 .white-renewal .wr-info,.white-renewal .wr-sec.wr-sub .wr-inner>.wr-info{display:flex!important;gap:8px}
 .white-renewal .wr-info>.wr-info__cell,.white-renewal .wr-sec.wr-sub .wr-inner>.wr-info>.wr-info__cell{flex:1 1 auto!important;width:auto!important;padding-left:10px;padding-right:10px}
 @media(min-width:900px){.white-renewal .wr-info,.white-renewal .wr-sec.wr-sub .wr-inner>.wr-info{gap:16px}}
+/* 法定ページ（タイトルありのテンプレート）：左右の余白とタイトルの大きさ */
+body.white-renewal.page-template-default .sbs-main{padding-left:var(--wr-gap)!important;padding-right:var(--wr-gap)!important;padding-top:40px!important;padding-bottom:56px!important;box-sizing:border-box}
+body.white-renewal.page-template-default .sbs-main>.wp-block-post-title{font-family:var(--wp--preset--font-family--zen-kaku,"Zen Kaku Gothic New"),sans-serif!important;font-size:24px!important;font-weight:700!important;letter-spacing:.08em!important;line-height:1.5!important;color:var(--wr-green-d)!important;margin:0 auto 28px!important;max-width:840px}
+body.white-renewal.page-template-default .sbs-main>.entry-content{max-width:840px!important;margin-left:auto!important;margin-right:auto!important}
+@media(min-width:900px){body.white-renewal.page-template-default .sbs-main{padding-top:64px!important;padding-bottom:80px!important}body.white-renewal.page-template-default .sbs-main>.wp-block-post-title{font-size:30px!important;margin-bottom:40px!important}}
+/* PC：ヘッダーの境目に薄い影 */
+@media(min-width:1025px){body.white-renewal .sbs-header{box-shadow:0 2px 12px rgba(91,75,69,.08);z-index:30}}
